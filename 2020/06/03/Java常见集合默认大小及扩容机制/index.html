@@ -6,22 +6,38 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>Hexo发布博客引用自带图片的方法 | 杨翔宇的博客</title>
+  <title>Java常见集合默认大小及扩容机制 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo发布博客引用自带图片的方法">
+  <meta name="description" content="Java常见集合默认大小及扩容机制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo发布博客引用自带图片的方法">
-<meta property="og:url" content="https://twelveyu.github.io/2020/05/31/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="Java常见集合默认大小及扩容机制">
+<meta property="og:url" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
-<meta property="og:description" content="Hexo发布博客引用自带图片的方法">
+<meta property="og:description" content="Java常见集合默认大小及扩容机制">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://twelveyu.github.io/assets/index.jpg">
-<meta property="og:image" content="https://twelveyu.github.io/2020/05/31/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/create.jpg">
-<meta property="article:published_time" content="2020-05-31T05:16:30.000Z">
-<meta property="article:modified_time" content="2020-05-31T10:00:35.696Z">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/1.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/2.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/3.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/4.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/5.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/6.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/7.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/8.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/9.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/10.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/11.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/12.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/13.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/14.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/15.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/16.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/17.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/18.png">
+<meta property="article:published_time" content="2020-06-03T15:00:32.000Z">
+<meta property="article:modified_time" content="2020-06-04T15:20:38.934Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://twelveyu.github.io/assets/index.jpg">
+<meta name="twitter:image" content="https://twelveyu.github.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/1.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -166,45 +182,39 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Hexo发布博客引用自带图片的方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <i class="fa fa-thumb-tack"></i>
+  <font color=7D26CD>置顶</font>
+  <<span class="post-meta-divider"></span>
+
+<article id="post-Java常见集合默认大小及扩容机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo发布博客引用自带图片的方法
+      Java常见集合默认大小及扩容机制
     </h1>
   
 
         
-        <a href="/2020/05/31/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-31T05:16:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
+        <a href="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-06-03T15:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hexo发布博客引用自带图片的方法"><a href="#Hexo发布博客引用自带图片的方法" class="headerlink" title="Hexo发布博客引用自带图片的方法"></a>Hexo发布博客引用自带图片的方法</h1><a id="more"></a>
-<h2 id="外部链接"><a href="#外部链接" class="headerlink" title="外部链接"></a>外部链接</h2><p>如果你要插入的图片是外部链接，则可以直接使用<code>![描述](地址)</code>来引用<br>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![头像](https:&#x2F;&#x2F;twelveyu.github.io&#x2F;assets&#x2F;index.jpg)</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：<br><img src="https://twelveyu.github.io/assets/index.jpg" alt="头像"></p>
-<h2 id="本地绝对路径"><a href="#本地绝对路径" class="headerlink" title="本地绝对路径"></a>本地绝对路径</h2><p>当 Hexo 项目中只用到少量图片时，可以将图片统一放在 source/images 文件夹中，通过 Markdown 语法访问它们。</p>
-<h2 id="本地相对路径"><a href="#本地相对路径" class="headerlink" title="本地相对路径"></a>本地相对路径</h2><p>要求hexo的版本是hexo3以上，可以在根路径的package.json里查看。需要先将<code>_config.yml</code>配置文件的<code>post_asset_folder</code>改为<code>true</code>。</p>
-<p>创建博客的命令为：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &quot;title&quot;</span><br></pre></td></tr></table></figure>
-<p>其中layout可以省略，例如：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;Hexo发布博客引用自带图片的方法&quot;</span><br></pre></td></tr></table></figure>
-<p>使用完命令之后，在source/_post文件夹里面就会出现一个.md文件和同名的文件夹。<br>代码：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片](.&#x2F;Hexo发布博客引用自带图片的方法&#x2F;create.jpg)</span><br></pre></td></tr></table></figure>
-<p>显示效果：  </p>
-<p><img src="/2020/05/31/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/create.jpg" alt="图片">    </p>
-<p>则可以直接使用相对路径引用图片即可。</p>
-<p>eg: 需要修改<code>hexo-asset-image</code>的版本<br>卸载<code>hexo-asset-image</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-asset-image</span><br></pre></td></tr></table></figure>
-<p>安装这个版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &quot;https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image&quot;</span><br></pre></td></tr></table></figure>
+        <h1 id="Java常见集合默认大小及扩容机制"><a href="#Java常见集合默认大小及扩容机制" class="headerlink" title="Java常见集合默认大小及扩容机制"></a>Java常见集合默认大小及扩容机制</h1><a id="more"></a>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>首先看一下jdk1.8 API中关于ArrayList的介绍：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/1.png" alt="ArrayList"><br>可以看到ArrayList是以数组的形式储存的，其中构造方法如下所示：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/2.png" alt="ArrayList"><br>ArrayList(int initialCapacity)：用指定的初始容量构造一个空列表。<br>ArrayList()：构造一个初始容量为十的空列表。详见如下源码：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/3.png" alt="ArrayList"><br>扩容源码如下：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/4.png" alt="ArrayList"><br>如图所示<code>int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);</code>可以看出每次扩容为原来的1.5倍即（10、15、22、33、49…）<br>每次在插入之前都检查容量是否足够，如果不够才会进行扩容，所以ArrayList的加载因子是1<br>关于ArrayList的最大容量，很多人以为就是<code>Integer.MAX_VALUE</code>，通过看源码<code>private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;</code>可以得知其实ArrayList的最大容量为<code>Integer.MAX_VALUE - 8</code>至于为什么是减8而不是减其他的数字，我在网上查了些资料，大概意思就是数组需要8 bytes去储存他自己的大小。</p>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>linkedList 是一个双向链表，没有初始化大小，也没有扩容的机制</p>
+<h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>首先看一下jdk1.8 API中关于Vector的介绍：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/5.png" alt="Vector"><br>可以看到Vector和ArrayList一样，也是储存在数组结构中，其中构造方法如下所示：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/6.png" alt="Vector"><br>Vector(int initialCapacity, int capacityIncrement)：用指定的初始容量和容量增量构造一个空向量。<br>Vector(int initialCapacity)：用指定的初始容量构造一个空向量，并以其容量增量等于零。<br>Vector()：构造一个空向量，使其内部数据数组的大小 10及其标准容量增量为零。<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/7.png" alt="Vector"><br>可以看出其实下面两个方法都是调用了第一个方法，初始容量为10。其中<code>initialCapacity</code>为初始容量<code>capacityIncrement</code>为容量增量，其扩容机制如图所示：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/8.png" alt="Vector"><br>根据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int newCapacity &#x3D; oldCapacity + ((capacityIncrement &gt; 0) ?</span><br><span class="line">                                         capacityIncrement : oldCapacity);</span><br></pre></td></tr></table></figure>
+<p>可以得知，当<code>capacityIncrement</code>数值大于0时，则每次扩容的数值等于该值，否则每次扩容为原来的二倍即<br>Vector<String> v = new Vector<String>(); // 10,20,40,80,160,320 的速度递增<br>Vector<String> v2 = new Vector&lt;&gt;(5,5);// 5,10,15,20,25 的速度递增。</String></String></String></p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>首先看一下jdk1.8 API中关于HashMap的介绍：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/9.png" alt="HashMap"><br>可以看到HashMap是基于哈希表的 Map接口的实现。允许 null值和 null关键。其中构造方法如下：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/10.png" alt="HashMap"><br>HashMap(int initialCapacity, float loadFactor)：构造一个空 HashMap具有指定的初始容量和加载因子。<br>HashMap(int initialCapacity)：构建了一个具有指定的初始容量和加载因子空 HashMap（0.75）。<br>HashMap()：构造一个默认的初始容量的空 HashMap（16）和默认的加载因子（0.75）。<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/11.png" alt="HashMap"><br>如图所示可以看到默认大小为16，加载因子为0.75，最大值为2的30次方<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/12.png" alt="HashMap"><br>如图可以看到HashMap扩容的时候是成倍的进行扩容的。</p>
+<h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><p>首先看一下jdk1.8 API中关于Hashtable的介绍：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/13.png" alt="Hashtable"><br>可以看到HashMap也是基于哈希表的。不允许 null值和 null关键。其中构造方法如下：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/14.png" alt="Hashtable"><br>Hashtable(int initialCapacity, float loadFactor) ：构建一个新的空哈希表的指定初始容量和负载因子。<br>Hashtable(int initialCapacity) ：构建一个新的空哈希表指定初始容量和加载因子（0.75）。<br>Hashtable() ：构建一个新的空哈希表默认初始容量（11）和负载因子（0.75）。如下图所示：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/15.png" alt="Hashtable"><br>根据下图可以看出Hashtable扩容是原来的两倍+1：<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/16.png" alt="Hashtable"></p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set是基于对应的Map实现的，所以扩容机制与对应的Map保持一致。<br>通过下图HashSet的源码可以得知，HashSet的就是基于HashMap实现的<br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/17.png" alt="HashSet"><br><img src="/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/18.png" alt="HashSet"></p>
 
       
 
@@ -242,6 +252,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
       
@@ -294,7 +309,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/05/31/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/06/03/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,18 +324,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          浅谈生产环境出现CUP占用过高的分析思路和定位
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用hexo博客报错Template render error (unknown path)解决方法</div>
+    <a href="/2020/06/02/%E6%B5%85%E8%B0%88Java%E9%9B%86%E5%90%88%E4%B8%ADList%E3%80%81Set%E3%80%81Map/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈Java集合中List、Set、Map</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -347,7 +353,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo发布博客引用自带图片的方法"><span class="toc-number">1.</span> <span class="toc-text">Hexo发布博客引用自带图片的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#外部链接"><span class="toc-number">1.1.</span> <span class="toc-text">外部链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地绝对路径"><span class="toc-number">1.2.</span> <span class="toc-text">本地绝对路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地相对路径"><span class="toc-number">1.3.</span> <span class="toc-text">本地相对路径</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java常见集合默认大小及扩容机制"><span class="toc-number">1.</span> <span class="toc-text">Java常见集合默认大小及扩容机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概述"><span class="toc-number">1.1.</span> <span class="toc-text">1.概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.2.</span> <span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">ArrayList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">Vector</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map"><span class="toc-number">1.3.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HashMap"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">HashMap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hashtable"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">Hashtable</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set"><span class="toc-number">1.4.</span> <span class="toc-text">Set</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

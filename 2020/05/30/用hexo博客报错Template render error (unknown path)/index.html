@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>用hexo博客报错Template render error (unknown path)解决方法 | Hexo</title>
+  <title>用hexo博客报错Template render error (unknown path)解决方法 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="用hexo博客报错Template render error (unknown path)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用hexo博客报错Template render error (unknown path)解决方法">
 <meta property="og:url" content="https://twelveyu.github.io/2020/05/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="杨翔宇的博客">
 <meta property="og:description" content="用hexo博客报错Template render error (unknown path)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-30T14:40:53.000Z">
@@ -21,7 +21,7 @@
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/index.jpg">
@@ -54,6 +54,8 @@
 		  <h1 class="header-author"><a href="/">杨翔宇</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">不想受学习的苦  就要受生活的苦</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -70,10 +72,6 @@
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -115,6 +113,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">杨翔宇</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不想受学习的苦  就要受生活的苦<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -419,25 +419,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -505,43 +497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">杨翔宇&lt;br&gt;&lt;br&gt;求职意向：java开发&lt;br&gt;Email：799068515@qq.com&lt;br&gt;TEl:18513120826</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">杨翔宇&lt;br&gt;&lt;br&gt;职位：java开发&lt;br&gt;Email：799068515@qq.com&lt;br&gt;TEl:18513120826</div>
   	  	
     	</section>
     
