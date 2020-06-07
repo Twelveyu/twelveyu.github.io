@@ -6,21 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>markdown(.md)介绍及语法 | 杨翔宇的博客</title>
+  <title>Archives: 2020/4 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="markdown图文介绍">
-<meta property="og:type" content="article">
-<meta property="og:title" content="markdown(.md)介绍及语法">
-<meta property="og:url" content="https://twelveyu.github.io/2020/05/30/markdown(.md)%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%AD%E6%B3%95/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="杨翔宇的博客">
+<meta property="og:url" content="https://twelveyu.github.io/archives/2020/04/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
-<meta property="og:description" content="markdown图文介绍">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00139-2980.jpg">
-<meta property="article:published_time" content="2020-05-30T09:41:55.000Z">
-<meta property="article:modified_time" content="2020-06-04T15:20:42.256Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00139-2980.jpg">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -165,432 +159,48 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-markdown(.md)介绍及语法" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      markdown(.md)介绍及语法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-04-22T15:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/">Java常见集合默认大小及扩容机制</a>
     </h1>
   
 
-        
-        <a href="/2020/05/30/markdown(.md)%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-30T09:41:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="markdown图文介绍"><a href="#markdown图文介绍" class="headerlink" title="markdown图文介绍"></a>markdown图文介绍</h1><a id="more"></a>
-<h2 id="markdown介绍"><a href="#markdown介绍" class="headerlink" title="markdown介绍"></a>markdown介绍</h2><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
-<h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><p>Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。<br>用于编写说明文档，并且以“README.md”的文件名保存在软件的目录下面。<br>除此之外，由于我们有了RStudio这样的神级编辑器，我们还可以快速将Markdown转化为演讲PPT、Word产品文档、LaTex论文甚至是用非常少量的代码完成最小可用原型。在数据科学领域，Markdown已经广泛使用，极大地推进了动态可重复性研究的历史进程。</p>
-<h2 id="行内语法讲解"><a href="#行内语法讲解" class="headerlink" title="行内语法讲解"></a>行内语法讲解</h2><h4 id="注释的表述"><a href="#注释的表述" class="headerlink" title="注释的表述"></a>注释的表述</h4><ul>
-<li>代码法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&#39;display: none&#39;&gt;</span><br><span class="line">    我是代码注释，我不会显示</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
-<li>HTML注释<br>既然支持html语法，那也支持html注释，快捷键 comment + /。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--我是HTML注释，我不会显示。--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">我是多行注释，</span><br><span class="line">我不会显示。</span><br><span class="line">    --&gt;</span><br></pre></td></tr></table></figure></li>
-<li>hack方法<br>hack方法就是利用markdown的解析原理来实现注释的。<br>一般有的markdown解析器不支持上面的注释方法，这个时候就可以用hack方法。<br>hack方法比上面2种方法稳定得多，但是语义化太差。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&#x2F;&#x2F;]：# (我是注释，我不会显示。)</span><br><span class="line">[^_^]： # (我是注释，我不会显示。)</span><br><span class="line">[&#x2F;&#x2F;]： &lt;&gt; (我是注释，我不会显示。。)</span><br><span class="line">[comment]： &lt;&gt; (我是注释，我不会显示。。)</span><br></pre></td></tr></table></figure>
-<h4 id="分级标题，任务列表"><a href="#分级标题，任务列表" class="headerlink" title="分级标题，任务列表"></a>分级标题，任务列表</h4></li>
-<li>分级标题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题  &lt;!--最多6级标题--&gt;</span><br></pre></td></tr></table></figure></li>
-<li>任务列表  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 无对勾</span><br><span class="line">- [x] 有对勾</span><br></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<ul>
-<li><input disabled type="checkbox"> 任务一 未做任务</li>
-<li><input checked disabled type="checkbox"> 任务二 已做任务</li>
-</ul>
-<h4 id="缩进、换行、空行、对齐方式"><a href="#缩进、换行、空行、对齐方式" class="headerlink" title="缩进、换行、空行、对齐方式"></a>缩进、换行、空行、对齐方式</h4><ul>
-<li>首行缩进  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">【1】 &amp;emsp;或&amp;#8195; &#x2F;&#x2F;全角</span><br><span class="line">【2】 &amp;ensp;或&amp;#8194; &#x2F;&#x2F;半角</span><br><span class="line">【3】 &amp;nbsp;或&amp;#160;  &#x2F;&#x2F;半角之半角</span><br></pre></td></tr></table></figure></li>
-<li>换行<br>由于markdown编辑器的不同,可能在一行字后面，直接换行回车，也能实现换行，但是在Visual Studio Code或者atom上，想要换行必须得在一行字后面空两个格子才行。</li>
-<li>空行<br>在编辑的时候有多少个空行(只要这一行只有回车或者space没有其他的字符就算空行)，在渲染之后，只隔着一行。</li>
-<li>对齐方式  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;行中心对齐&lt;&#x2F;center&gt;</span><br><span class="line">&lt;p align&#x3D;&quot;left&quot;&gt;行左对齐&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p align&#x3D;&quot;right&quot;&gt;行右对齐&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
-显示效果：<center>行中心对齐</center>
-<p align="left">行左对齐</p>
-<p align="right">行右对齐</p>
-#### 斜体、粗体、删除线、下划线、背景高亮
+        <div class="article-info info-on-right">
+          
+          
 
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*斜体*或_斜体_</span><br><span class="line">**粗体**</span><br><span class="line">***加粗斜体***</span><br><span class="line">~~删除线~~</span><br><span class="line">++下划线++</span><br><span class="line">&#x3D;&#x3D;背景高亮&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
-<p>显示效果：<br><em>斜体</em>或<em>斜体</em><br><strong>粗体</strong><br><strong><em>加粗斜体</em></strong><br><del>删除线</del><br>++下划线++<br>==背景高亮==</p>
-<h4 id="超链接、页内链接、自动链接、注脚"><a href="#超链接、页内链接、自动链接、注脚" class="headerlink" title="超链接、页内链接、自动链接、注脚"></a>超链接、页内链接、自动链接、注脚</h4><ul>
-<li>行内式<br>[]里写链接文字，()里写链接地址, ()中的””中可以为链接指定title属性，title属性可加可不加。title属性的效果是鼠标悬停在链接上会出现指定的 title文字，链接地址与title前有一个空格。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">欢迎阅读 [个人博客](https:&#x2F;&#x2F;twelveyu.github.io&#x2F;)</span><br></pre></td></tr></table></figure>
-显示效果：<br>欢迎阅读 <a href="https://twelveyu.github.io/">个人博客</a></li>
-<li>参考式<br>参考式超链接一般用在学术论文上面，或者另一种情况，如果某一个链接在文章中多处使用，那么使用引用 的方式创建链接将非常好，它可以让你对链接进行统一的管理。</li>
-</ul>
-<p>语法说明：  </p>
-<p>参考式链接分为两部分，文中的写法 [链接文字][链接标记]，在文本的任意位置添加[链接标记]:链接地址。<br>如果链接文字本身可以做为链接标记，你也可以写成[链接文字][]<br>[链接文字]：链接地址的形式，见代码的最后一行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">我经常去的几个网站[Google][1]、[Github][2]。</span><br><span class="line">[1]:http:&#x2F;&#x2F;www.google.com</span><br><span class="line">[2]:http:&#x2F;&#x2F;www.github.com</span><br></pre></td></tr></table></figure>
-<p>显示效果：<br>我经常去的几个网站<a href="http://www.google.com" target="_blank" rel="noopener">Google</a>、<a href="http://www.github.com" target="_blank" rel="noopener">Github</a>。  </p>
-<ul>
-<li>注脚<br>语法说明：</li>
-</ul>
-<p>在需要添加注脚的文字后加上脚注名字[^注脚名字],称为加注。 然后在文本的任意位置(一般在最后)添加脚注，脚注前必须有对应的脚注名字。</p>
-<p>注意：经测试注脚与注脚之间必须空一行，不然会失效。成功后会发现，即使你没有把注脚写在文末，经Markdown转换后，也会自动归类到文章的最后。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">使用 Markdown[^1]可以效率的书写文档, 直接转换成 HTML[^2]。</span><br><span class="line"></span><br><span class="line">[^1]:Markdown是一种纯文本标记语言</span><br><span class="line"></span><br><span class="line">[^2]:HyperText Markup Language 超文本标记语言</span><br></pre></td></tr></table></figure>
-<p>显示效果：  </p>
-<p>我有注脚<a href="我是注脚我在最后，点击我后方的链接可以直接跳转回加注脚的地方哟。">^1</a></p>
-<ul>
-<li>锚点（页内超链接）<br>网页中，锚点其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的，只支持在标题后插入锚点，其它地方无效。</li>
-</ul>
-<ul>
-<li>自动链接<br>语法说明：<br>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;http:&#x2F;&#x2F;example.com&#x2F;&gt; &amp;emsp;&amp;emsp;</span><br><span class="line">&lt;address@example.com&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>&lt;<a href="https://twelveyu.github.io/">https://twelveyu.github.io/</a>; &emsp;&emsp;<br>&lt;<a href="mailto:799068515@qq.com">799068515@qq.com</a>&gt;</p>
-<h4 id="无序列表、有序列表、定义型列表"><a href="#无序列表、有序列表、定义型列表" class="headerlink" title="无序列表、有序列表、定义型列表"></a>无序列表、有序列表、定义型列表</h4><ul>
-<li>无序列表<br>使用 *，+，- 表示无序列表。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 无序列表一</span><br><span class="line">+ 无序列表二</span><br><span class="line">- 无序列表三</span><br></pre></td></tr></table></figure>
-显示效果：  </li>
-<li>无序列表一</li>
-</ul>
-<ul>
-<li>无序列表二</li>
-</ul>
-<ul>
-<li>无序列表三  </li>
-</ul>
-<ul>
-<li>有序列表<br>有序列表则使用数字接着一个英文句点。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表项 一</span><br><span class="line">2. 有序列表项 二</span><br><span class="line">3. 有序列表项 三</span><br></pre></td></tr></table></figure>
-显示效果：  </li>
-</ul>
-<ol>
-<li>有序列表项 一</li>
-<li>有序列表项 二</li>
-<li>有序列表项 三</li>
-</ol>
-<ul>
-<li>定义型列表<br>定义型列表由名词和解释组成。一行写上定义，紧跟一行写上解释。解释的写法:紧跟一个缩进(Tab)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:   轻量级文本标记语言（左侧有一个可见的冒号和四个不可见的空格）</span><br></pre></td></tr></table></figure>
-显示效果:<br>markdown<br>:   轻量级文本标记语言，轻量级文本标记语言，可以转换成html，pdf等格式<h4 id="插入图像"><a href="#插入图像" class="headerlink" title="插入图像"></a>插入图像</h4>语法中图片Alt的意思是如果图片因为某些原因不能显示，就用定义的图片Alt文字来代替图片。 图片Title则和链接中的Title一样，表示鼠标悬停与图片上时出现的文字。 Alt 和 Title 都不是必须的，可以省略，但建议写上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![小猫咪](https:&#x2F;&#x2F;ns-strategy.cdn.bcebos.com&#x2F;ns-strategy&#x2F;upload&#x2F;fc_big_pic&#x2F;part-00139-2980.jpg)</span><br></pre></td></tr></table></figure>
-显示效果：<br><img src="https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00139-2980.jpg" alt="小猫咪"><h4 id="多级引用"><a href="#多级引用" class="headerlink" title="多级引用"></a>多级引用</h4>引用需要在被引用的文本前加上&gt;符号和空格，允许多层嵌套，也允许你偷懒只在整个段落的第一行最前面加上 &gt; 。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 三层嵌套</span><br><span class="line">&gt;&gt; 两层嵌套</span><br><span class="line">&gt; 一层嵌套</span><br></pre></td></tr></table></figure>
-显示效果:  <blockquote>
-<blockquote>
-<blockquote>
-<p>三层嵌套<br>两层嵌套<br>一层嵌套</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<blockquote>
-<p>两层嵌套<br>一层嵌套</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>一层嵌套</p>
-</blockquote>
-<h4 id="转义字符、字体、字号、颜色"><a href="#转义字符、字体、字号、颜色" class="headerlink" title="转义字符、字体、字号、颜色"></a>转义字符、字体、字号、颜色</h4><ul>
-<li>转义字符<br>Markdown中的转义字符为\，转义的有：</li>
-</ul>
-<p>\ 反斜杠 ` 反引号 * 星号 _ 下划线 {} 大括号 [] 中括号 () 小括号  # 井号 + 加号 - 减号 . 英文句号 ! 感叹号</p>
-<ul>
-<li>字体、字号、颜色<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;font face&#x3D;&quot;黑体&quot;&gt;我是黑体字&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font face&#x3D;&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font face&#x3D;&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;#0099ff size&#x3D;12 face&#x3D;&quot;黑体&quot;&gt;黑体&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;gray size&#x3D;5&gt;gray&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;#00ffff size&#x3D;3&gt;null&lt;&#x2F;font&gt;</span><br></pre></td></tr></table></figure>
-显示效果：<br><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color="#0099ff" size="12" face="黑体">黑体</font><br><font color="gray" size="5">gray</font><br><font color="#00ffff" size="3">null</font>  <h2 id="块语法讲解"><a href="#块语法讲解" class="headerlink" title="块语法讲解"></a>块语法讲解</h2><h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4>对于程序员来说这个功能是必不可少的，插入程序代码的方式有两种，一种是利用缩进(Tab), 另一种是利用”`”符号（一般在ESC键下方）包裹代码。  </li>
-<li>行内式  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">介绍一下java中的 &#96;main()&#96; 方法</span><br></pre></td></tr></table></figure>
-显示效果：<br>介绍一下java中的 <code>main()</code> 方法  </li>
-<li>用六个`包裹多行代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#39;&#39;</span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      System.out.println(&quot;Hello World&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
-显示效果：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> public static void main(String[] args) &#123;</span><br><span class="line">     System.out.println(&quot;Hello World&quot;);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4>语法说明：</li>
-</ul>
-<p>不管是哪种方式，第一行为表头，第二行分隔表头和主体部分，第三行开始每一行为一个表格行。<br>列于列之间用管道符|隔开。原生方式的表格每一行的两边也要有管道符。<br>第二行还可以为不同的列指定对齐方向。默认为左对齐，在-右边加上:就右对齐。</p>
-<ul>
-<li>左对齐， :-: 中心对齐，-: 右对齐<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|学号|姓名|序号|</span><br><span class="line">|-|-|-|</span><br><span class="line">|小明明|男|5|</span><br><span class="line">|小红|女|79|</span><br><span class="line">|小陆|男|192|</span><br></pre></td></tr></table></figure>
-显示效果：  <table>
-<thead>
-<tr>
-<th>学号</th>
-<th>姓名</th>
-<th>序号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>小明明</td>
-<td>男</td>
-<td>5</td>
-</tr>
-<tr>
-<td>小红</td>
-<td>女</td>
-<td>79</td>
-</tr>
-<tr>
-<td>小陆</td>
-<td>男</td>
-<td>192</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h4 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h4><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br><span class="line">***</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">-----------</span><br></pre></td></tr></table></figure>
-<p>显示效果：  </p>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<h4 id="HTML原始码"><a href="#HTML原始码" class="headerlink" title="HTML原始码"></a>HTML原始码</h4><p>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">第一个例子：</span><br><span class="line">&lt;div class&#x3D;&quot;footer&quot;&gt;</span><br><span class="line">© 2004 Foo Corporation</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">第二个例子：</span><br><span class="line">&lt;center&gt;</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;th rowspan&#x3D;&quot;2&quot;&gt;值班人员&lt;&#x2F;th&gt;</span><br><span class="line">&lt;th&gt;星期一&lt;&#x2F;th&gt;</span><br><span class="line">&lt;th&gt;星期二&lt;&#x2F;th&gt;</span><br><span class="line">&lt;th&gt;星期三&lt;&#x2F;th&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;李强&lt;&#x2F;td&gt;</span><br><span class="line">&lt;td&gt;张明&lt;&#x2F;td&gt;</span><br><span class="line">&lt;td&gt;王平&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;center&gt;</span><br></pre></td></tr></table></figure>
-<p>显示效果：<br>第一个例子：</p>
-<div class="footer">
-© 2004 Foo Corporation
-</div>
-第二个例子：
-<center>
-
-<table>
-<tr>
-<th rowspan="2">值班人员</th>
-<th>星期一</th>
-<th>星期二</th>
-<th>星期三</th>
-</tr>
-<tr>
-<td>李强</td>
-<td>张明</td>
-<td>王平</td>
-</tr>
-</table>
-
-</center>
-
-<h4 id="特殊字"><a href="#特殊字" class="headerlink" title="特殊字"></a>特殊字</h4><table>
-<thead>
-<tr>
-<th>特殊字符</th>
-<th>描述</th>
-<th>字符的代码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&nbsp;</td>
-<td>空格符</td>
-<td>&amp;nbsp;</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于号</td>
-<td>&amp;lt;</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于号</td>
-<td>&amp;lt;</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>和号</td>
-<td>&amp;amp;</td>
-</tr>
-<tr>
-<td>&yen;</td>
-<td>人民币</td>
-<td>&amp;yen;</td>
-</tr>
-<tr>
-<td>&copy;</td>
-<td>版权</td>
-<td>&amp;copy;</td>
-</tr>
-<tr>
-<td>&reg;</td>
-<td>注册商标</td>
-<td>&amp;reg;</td>
-</tr>
-<tr>
-<td>&deg;C</td>
-<td>摄氏度</td>
-<td>&amp;deg;C</td>
-</tr>
-<tr>
-<td>&plusmn;</td>
-<td>正负号</td>
-<td>&amp;plusmn;</td>
-</tr>
-<tr>
-<td>&times;</td>
-<td>乘号</td>
-<td>&amp;times;</td>
-</tr>
-<tr>
-<td>&divide;</td>
-<td>除号</td>
-<td>&amp;divide;</td>
-</tr>
-<tr>
-<td>&sup2;</td>
-<td>平方（上标²）</td>
-<td>&amp;sup2;</td>
-</tr>
-<tr>
-<td>&sup3;</td>
-<td>立方（上标³）</td>
-<td>&amp;sup3;</td>
-</tr>
-</tbody></table>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1429012500&auto=1&height=66"></iframe>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/zhifubao.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/05/30/markdown(.md)%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%AD%E6%B3%95/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/05/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用hexo博客报错Template render error (unknown path)解决方法
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#markdown图文介绍"><span class="toc-number">1.</span> <span class="toc-text">markdown图文介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown介绍"><span class="toc-number">1.1.</span> <span class="toc-text">markdown介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用途"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">用途</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行内语法讲解"><span class="toc-number">1.2.</span> <span class="toc-text">行内语法讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注释的表述"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">注释的表述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分级标题，任务列表"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">分级标题，任务列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缩进、换行、空行、对齐方式"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">缩进、换行、空行、对齐方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#超链接、页内链接、自动链接、注脚"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">超链接、页内链接、自动链接、注脚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#无序列表、有序列表、定义型列表"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">无序列表、有序列表、定义型列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入图像"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">插入图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多级引用"><span class="toc-number">1.2.0.7.</span> <span class="toc-text">多级引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转义字符、字体、字号、颜色"><span class="toc-number">1.2.0.8.</span> <span class="toc-text">转义字符、字体、字号、颜色</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#块语法讲解"><span class="toc-number">1.3.</span> <span class="toc-text">块语法讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码块"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表格"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分隔线"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">分隔线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML原始码"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">HTML原始码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊字"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">特殊字</span></a></li></ol></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
+    
 
 
           </div>
@@ -617,8 +227,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

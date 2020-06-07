@@ -6,27 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>浅谈生产环境出现CUP占用过高的分析思路和定位 | 杨翔宇的博客</title>
+  <title>用hexo博客报错Template render error (unknown path)解决方法 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浅谈生产环境出现CUP占用过高的分析思路和定位">
+  <meta name="description" content="用hexo博客报错Template render error (unknown path)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈生产环境出现CUP占用过高的分析思路和定位">
-<meta property="og:url" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/index.html">
+<meta property="og:title" content="用hexo博客报错Template render error (unknown path)解决方法">
+<meta property="og:url" content="https://twelveyu.github.io/2020/01/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
-<meta property="og:description" content="浅谈生产环境出现CUP占用过高的分析思路和定位">
+<meta property="og:description" content="用hexo博客报错Template render error (unknown path)">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/1.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/2.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/3.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/4.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/5.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/6.png">
-<meta property="article:published_time" content="2020-06-01T13:50:15.000Z">
-<meta property="article:modified_time" content="2020-06-04T15:20:48.531Z">
+<meta property="article:published_time" content="2020-01-30T14:40:53.000Z">
+<meta property="article:modified_time" content="2020-06-07T16:17:57.545Z">
 <meta property="article:author" content="杨翔宇">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://twelveyu.github.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/1.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -171,38 +164,30 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  <i class="fa fa-thumb-tack"></i>
-  <font color=7D26CD>置顶</font>
-  <<span class="post-meta-divider"></span>
-
-<article id="post-浅谈生产环境出现CUP占用过高的分析思路和定位" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-用hexo博客报错Template render error (unknown path)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      浅谈生产环境出现CUP占用过高的分析思路和定位
+      用hexo博客报错Template render error (unknown path)解决方法
     </h1>
   
 
         
-        <a href="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/" class="archive-article-date">
-  	<time datetime="2020-06-01T13:50:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
+        <a href="/2020/01/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/" class="archive-article-date">
+  	<time datetime="2020-01-30T14:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="浅谈生产环境出现CUP占用过高的分析思路和定位"><a href="#浅谈生产环境出现CUP占用过高的分析思路和定位" class="headerlink" title="浅谈生产环境出现CUP占用过高的分析思路和定位"></a>浅谈生产环境出现CUP占用过高的分析思路和定位</h1><a id="more"></a>
-<h2 id="1-先用top命令找出CPU占比最高的-拿到PID"><a href="#1-先用top命令找出CPU占比最高的-拿到PID" class="headerlink" title="1.先用top命令找出CPU占比最高的,拿到PID"></a>1.先用top命令找出CPU占比最高的,拿到PID</h2><p>如图所示，PID为5101<br><img src="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/1.png" alt="top"></p>
-<h2 id="2-ps-ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事"><a href="#2-ps-ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事" class="headerlink" title="2.ps -ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事"></a>2.ps -ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事</h2><p>如图所示：<br><img src="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/2.png" alt="top"></p>
-<h2 id="3-定位到具体线程或者代码"><a href="#3-定位到具体线程或者代码" class="headerlink" title="3.定位到具体线程或者代码"></a>3.定位到具体线程或者代码</h2><p>使用命令<code>ps -mp 进程ID -o THREAD,tid,time</code>进行定位(-m 显示所有的线程、-p pid进程使用CPU的时间、-o该参数后是用户自定义格式)，即：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -mp 5101 -o THREAD,tid,time</span><br></pre></td></tr></table></figure>
-<p>显示效果：<br><img src="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/3.png" alt="top"><br>则可以拿到有问题的线程<code>5102</code></p>
-<h2 id="4-将需要的线程ID转换为16进制格式-英文小写格式"><a href="#4-将需要的线程ID转换为16进制格式-英文小写格式" class="headerlink" title="4.将需要的线程ID转换为16进制格式(英文小写格式)"></a>4.将需要的线程ID转换为16进制格式(英文小写格式)</h2><h3 id="第一种方法：使用命令printf-quot-X-n-quot-有问题的线程ID"><a href="#第一种方法：使用命令printf-quot-X-n-quot-有问题的线程ID" class="headerlink" title="第一种方法：使用命令printf&quot;%X\n&quot;有问题的线程ID"></a>第一种方法：使用命令<code>printf&quot;%X\n&quot;有问题的线程ID</code></h3><h3 id="第二种方法：可直接使用计算器，切换到程序员模式，如图："><a href="#第二种方法：可直接使用计算器，切换到程序员模式，如图：" class="headerlink" title="第二种方法：可直接使用计算器，切换到程序员模式，如图："></a>第二种方法：可直接使用计算器，切换到程序员模式，如图：</h3><p><img src="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/4.png" alt="top"><br>可以得到转换后的16进制为13ee(需要小写，内存中都是小写)</p>
-<h2 id="5-jstack-进程ID-grep-tid-16进制线程ID小写英文-A60-打印前60行"><a href="#5-jstack-进程ID-grep-tid-16进制线程ID小写英文-A60-打印前60行" class="headerlink" title="5.jstack 进程ID|grep tid(16进制线程ID小写英文)-A60(打印前60行)"></a>5.jstack 进程ID|grep tid(16进制线程ID小写英文)-A60(打印前60行)</h2><p>即<code>jstack 5101 | grep 13ee -A60</code>效果如下：<br><img src="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/5.png" alt="top"><br>即JavaDemo02.main(JavaDemo02.java:10)<br><img src="/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/6.png" alt="top"><br>在通过查看出现问的代码的前后业务逻辑及代码即可。</p>
+        <h1 id="用hexo博客报错Template-render-error-unknown-path"><a href="#用hexo博客报错Template-render-error-unknown-path" class="headerlink" title="用hexo博客报错Template render error (unknown path)"></a>用hexo博客报错Template render error (unknown path)</h1><a id="more"></a>
+<p>写hexo博客的时候使用命令hexo g时出现如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&#39;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html</span><br><span class="line">Template render error: (unknown path)</span><br><span class="line">  Error: expected end of comment, got end of file</span><br><span class="line">    at Object._prettifyError (F:\blog\twelveyuBlog\node_modules\nunjucks\src\lib.js:36:11)</span><br><span class="line">    at Template.render (F:\blog\twelveyuBlog\node_modules\nunjucks\src\environment.js:536:21)</span><br><span class="line">    at Environment.renderString (F:\blog\twelveyuBlog\node_modules\nunjucks\src\environment.js:378:17)</span><br><span class="line">    at F:\blog\twelveyuBlog\node_modules\hexo\lib\extend\tag.js:120:48</span><br><span class="line">    at tryCatcher (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Function.Promise.fromNode.Promise.fromCallback (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\promise.js:209:30)</span><br><span class="line">    at Tag.render (F:\blog\twelveyuBlog\node_modules\hexo\lib\extend\tag.js:120:18)</span><br><span class="line">    at Object.onRenderEnd (F:\blog\twelveyuBlog\node_modules\hexo\lib\hexo\post.js:291:22)</span><br><span class="line">    at F:\blog\twelveyuBlog\node_modules\hexo\lib\hexo\render.js:79:21</span><br><span class="line">    at tryCatcher (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\promise.js:547:31)</span><br><span class="line">    at Promise._settlePromise (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at _drainQueueStep (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\async.js:93:12)</span><br><span class="line">    at _drainQueue (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\async.js:86:9)</span><br><span class="line">    at Async._drainQueues (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\async.js:102:5)</span><br><span class="line">    at Immediate.Async.drainQueues (F:\blog\twelveyuBlog\node_modules\bluebird\js\release\async.js:15:14)</span><br><span class="line">    at processImmediate (internal&#x2F;timers.js:456:21)</span><br></pre></td></tr></table></figure>
+<p>后来查询文档发现是hexo转义时候发生的错误，名章中可能出现了{},[]等无法转义的字符，用`进行注释下就可以了</p>
 
       
 
@@ -240,11 +225,6 @@
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -308,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/06/01/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/01/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,17 +303,17 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/02/%E6%B5%85%E8%B0%88Java%E9%9B%86%E5%90%88%E4%B8%ADList%E3%80%81Set%E3%80%81Map/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          浅谈Java集合中List、Set、Map
+          浅谈生产环境出现CUP占用过高的分析思路和定位
         
       </div>
     </a>
   
   
-    <a href="/2020/05/31/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/01/10/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Hexo发布博客引用自带图片的方法</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -361,7 +341,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#浅谈生产环境出现CUP占用过高的分析思路和定位"><span class="toc-number">1.</span> <span class="toc-text">浅谈生产环境出现CUP占用过高的分析思路和定位</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-先用top命令找出CPU占比最高的-拿到PID"><span class="toc-number">1.1.</span> <span class="toc-text">1.先用top命令找出CPU占比最高的,拿到PID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ps-ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事"><span class="toc-number">1.2.</span> <span class="toc-text">2.ps -ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-定位到具体线程或者代码"><span class="toc-number">1.3.</span> <span class="toc-text">3.定位到具体线程或者代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-将需要的线程ID转换为16进制格式-英文小写格式"><span class="toc-number">1.4.</span> <span class="toc-text">4.将需要的线程ID转换为16进制格式(英文小写格式)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种方法：使用命令printf-quot-X-n-quot-有问题的线程ID"><span class="toc-number">1.4.1.</span> <span class="toc-text">第一种方法：使用命令printf&quot;%X\n&quot;有问题的线程ID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种方法：可直接使用计算器，切换到程序员模式，如图："><span class="toc-number">1.4.2.</span> <span class="toc-text">第二种方法：可直接使用计算器，切换到程序员模式，如图：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-jstack-进程ID-grep-tid-16进制线程ID小写英文-A60-打印前60行"><span class="toc-number">1.5.</span> <span class="toc-text">5.jstack 进程ID|grep tid(16进制线程ID小写英文)-A60(打印前60行)</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用hexo博客报错Template-render-error-unknown-path"><span class="toc-number">1.</span> <span class="toc-text">用hexo博客报错Template render error (unknown path)</span></a></li></ol>
                     </div>
                 </span>
             </div>

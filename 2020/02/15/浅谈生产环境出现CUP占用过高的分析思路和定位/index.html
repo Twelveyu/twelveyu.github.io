@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>Archives: 2020/6 | 杨翔宇的博客</title>
+  <title>浅谈生产环境出现CUP占用过高的分析思路和定位 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杨翔宇的博客">
-<meta property="og:url" content="https://twelveyu.github.io/archives/2020/06/index.html">
+  <meta name="description" content="浅谈生产环境出现CUP占用过高的分析思路和定位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈生产环境出现CUP占用过高的分析思路和定位">
+<meta property="og:url" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
+<meta property="og:description" content="浅谈生产环境出现CUP占用过高的分析思路和定位">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/1.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/2.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/3.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/4.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/5.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/6.png">
+<meta property="article:published_time" content="2020-02-15T13:50:15.000Z">
+<meta property="article:modified_time" content="2020-06-07T16:18:11.457Z">
 <meta property="article:author" content="杨翔宇">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://twelveyu.github.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/1.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -159,48 +171,217 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+  <i class="fa fa-thumb-tack"></i>
+  <font color=7D26CD>置顶</font>
+  <<span class="post-meta-divider"></span>
+
+<article id="post-浅谈生产环境出现CUP占用过高的分析思路和定位" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/JUC%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-06-08T06:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/JUC%E6%80%BB%E7%BB%93/">JUC总结</a>
+    <h1 class="article-title" itemprop="name">
+      浅谈生产环境出现CUP占用过高的分析思路和定位
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/" class="archive-article-date">
+  	<time datetime="2020-02-15T13:50:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="浅谈生产环境出现CUP占用过高的分析思路和定位"><a href="#浅谈生产环境出现CUP占用过高的分析思路和定位" class="headerlink" title="浅谈生产环境出现CUP占用过高的分析思路和定位"></a>浅谈生产环境出现CUP占用过高的分析思路和定位</h1><a id="more"></a>
+<h2 id="1-先用top命令找出CPU占比最高的-拿到PID"><a href="#1-先用top命令找出CPU占比最高的-拿到PID" class="headerlink" title="1.先用top命令找出CPU占比最高的,拿到PID"></a>1.先用top命令找出CPU占比最高的,拿到PID</h2><p>如图所示，PID为5101<br><img src="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/1.png" alt="top"></p>
+<h2 id="2-ps-ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事"><a href="#2-ps-ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事" class="headerlink" title="2.ps -ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事"></a>2.ps -ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事</h2><p>如图所示：<br><img src="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/2.png" alt="top"></p>
+<h2 id="3-定位到具体线程或者代码"><a href="#3-定位到具体线程或者代码" class="headerlink" title="3.定位到具体线程或者代码"></a>3.定位到具体线程或者代码</h2><p>使用命令<code>ps -mp 进程ID -o THREAD,tid,time</code>进行定位(-m 显示所有的线程、-p pid进程使用CPU的时间、-o该参数后是用户自定义格式)，即：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -mp 5101 -o THREAD,tid,time</span><br></pre></td></tr></table></figure>
+<p>显示效果：<br><img src="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/3.png" alt="top"><br>则可以拿到有问题的线程<code>5102</code></p>
+<h2 id="4-将需要的线程ID转换为16进制格式-英文小写格式"><a href="#4-将需要的线程ID转换为16进制格式-英文小写格式" class="headerlink" title="4.将需要的线程ID转换为16进制格式(英文小写格式)"></a>4.将需要的线程ID转换为16进制格式(英文小写格式)</h2><h3 id="第一种方法：使用命令printf-quot-X-n-quot-有问题的线程ID"><a href="#第一种方法：使用命令printf-quot-X-n-quot-有问题的线程ID" class="headerlink" title="第一种方法：使用命令printf&quot;%X\n&quot;有问题的线程ID"></a>第一种方法：使用命令<code>printf&quot;%X\n&quot;有问题的线程ID</code></h3><h3 id="第二种方法：可直接使用计算器，切换到程序员模式，如图："><a href="#第二种方法：可直接使用计算器，切换到程序员模式，如图：" class="headerlink" title="第二种方法：可直接使用计算器，切换到程序员模式，如图："></a>第二种方法：可直接使用计算器，切换到程序员模式，如图：</h3><p><img src="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/4.png" alt="top"><br>可以得到转换后的16进制为13ee(需要小写，内存中都是小写)</p>
+<h2 id="5-jstack-进程ID-grep-tid-16进制线程ID小写英文-A60-打印前60行"><a href="#5-jstack-进程ID-grep-tid-16进制线程ID小写英文-A60-打印前60行" class="headerlink" title="5.jstack 进程ID|grep tid(16进制线程ID小写英文)-A60(打印前60行)"></a>5.jstack 进程ID|grep tid(16进制线程ID小写英文)-A60(打印前60行)</h2><p>即<code>jstack 5101 | grep 13ee -A60</code>效果如下：<br><img src="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/5.png" alt="top"><br>即JavaDemo02.main(JavaDemo02.java:10)<br><img src="/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/6.png" alt="top"><br>在通过查看出现问的代码的前后业务逻辑及代码即可。</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/02/15/%E6%B5%85%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%87%BA%E7%8E%B0CUP%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF%E5%92%8C%E5%AE%9A%E4%BD%8D/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/02/%E6%B5%85%E8%B0%88Java%E9%9B%86%E5%90%88%E4%B8%ADList%E3%80%81Set%E3%80%81Map/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浅谈Java集合中List、Set、Map
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/01/30/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用hexo博客报错Template render error (unknown path)解决方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#浅谈生产环境出现CUP占用过高的分析思路和定位"><span class="toc-number">1.</span> <span class="toc-text">浅谈生产环境出现CUP占用过高的分析思路和定位</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-先用top命令找出CPU占比最高的-拿到PID"><span class="toc-number">1.1.</span> <span class="toc-text">1.先用top命令找出CPU占比最高的,拿到PID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ps-ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事"><span class="toc-number">1.2.</span> <span class="toc-text">2.ps -ef或者jps进一步定位，得知是一个怎么样的一个后台程序给我们惹事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-定位到具体线程或者代码"><span class="toc-number">1.3.</span> <span class="toc-text">3.定位到具体线程或者代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-将需要的线程ID转换为16进制格式-英文小写格式"><span class="toc-number">1.4.</span> <span class="toc-text">4.将需要的线程ID转换为16进制格式(英文小写格式)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种方法：使用命令printf-quot-X-n-quot-有问题的线程ID"><span class="toc-number">1.4.1.</span> <span class="toc-text">第一种方法：使用命令printf&quot;%X\n&quot;有问题的线程ID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种方法：可直接使用计算器，切换到程序员模式，如图："><span class="toc-number">1.4.2.</span> <span class="toc-text">第二种方法：可直接使用计算器，切换到程序员模式，如图：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-jstack-进程ID-grep-tid-16进制线程ID小写英文-A60-打印前60行"><span class="toc-number">1.5.</span> <span class="toc-text">5.jstack 进程ID|grep tid(16进制线程ID小写英文)-A60(打印前60行)</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -227,8 +408,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

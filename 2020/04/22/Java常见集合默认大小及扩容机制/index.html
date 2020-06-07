@@ -6,15 +6,40 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>Archives: 2020/6 | 杨翔宇的博客</title>
+  <title>Java常见集合默认大小及扩容机制 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杨翔宇的博客">
-<meta property="og:url" content="https://twelveyu.github.io/archives/2020/06/index.html">
+  <meta name="description" content="Java常见集合默认大小及扩容机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java常见集合默认大小及扩容机制">
+<meta property="og:url" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
+<meta property="og:description" content="Java常见集合默认大小及扩容机制">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/1.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/2.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/3.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/4.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/5.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/6.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/7.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/8.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/9.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/10.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/11.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/12.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/13.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/14.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/15.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/16.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/19.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/20.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/17.png">
+<meta property="og:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/18.png">
+<meta property="article:published_time" content="2020-04-22T15:00:32.000Z">
+<meta property="article:modified_time" content="2020-06-07T16:18:38.122Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://twelveyu.github.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/1.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -159,48 +184,208 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+  <i class="fa fa-thumb-tack"></i>
+  <font color=7D26CD>置顶</font>
+  <<span class="post-meta-divider"></span>
+
+<article id="post-Java常见集合默认大小及扩容机制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/JUC%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-06-08T06:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/JUC%E6%80%BB%E7%BB%93/">JUC总结</a>
+    <h1 class="article-title" itemprop="name">
+      Java常见集合默认大小及扩容机制
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-04-22T15:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java常见集合默认大小及扩容机制"><a href="#Java常见集合默认大小及扩容机制" class="headerlink" title="Java常见集合默认大小及扩容机制"></a>Java常见集合默认大小及扩容机制</h1><a id="more"></a>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>首先看一下jdk1.8 API中关于ArrayList的介绍：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/1.png" alt="ArrayList"><br>可以看到ArrayList是以数组的形式储存的，其中构造方法如下所示：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/2.png" alt="ArrayList"><br>ArrayList(int initialCapacity)：用指定的初始容量构造一个空列表。<br>ArrayList()：构造一个初始容量为十的空列表。详见如下源码：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/3.png" alt="ArrayList"><br>扩容源码如下：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/4.png" alt="ArrayList"><br>如图所示<code>int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);</code>可以看出每次扩容为原来的1.5倍即（10、15、22、33、49…）<br>每次在插入之前都检查容量是否足够，如果不够才会进行扩容，所以ArrayList的加载因子是1<br>关于ArrayList的最大容量，很多人以为就是<code>Integer.MAX_VALUE</code>，通过看源码<code>private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;</code>可以得知其实ArrayList的最大容量为<code>Integer.MAX_VALUE - 8</code>至于为什么是减8而不是减其他的数字，我在网上查了些资料，大概意思就是数组需要8 bytes去储存他自己的大小。</p>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>linkedList 是一个双向链表，没有初始化大小，也没有扩容的机制</p>
+<h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>首先看一下jdk1.8 API中关于Vector的介绍：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/5.png" alt="Vector"><br>可以看到Vector和ArrayList一样，也是储存在数组结构中，其中构造方法如下所示：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/6.png" alt="Vector"><br>Vector(int initialCapacity, int capacityIncrement)：用指定的初始容量和容量增量构造一个空向量。<br>Vector(int initialCapacity)：用指定的初始容量构造一个空向量，并以其容量增量等于零。<br>Vector()：构造一个空向量，使其内部数据数组的大小 10及其标准容量增量为零。<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/7.png" alt="Vector"><br>可以看出其实下面两个方法都是调用了第一个方法，初始容量为10。其中<code>initialCapacity</code>为初始容量<code>capacityIncrement</code>为容量增量，其扩容机制如图所示：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/8.png" alt="Vector"><br>根据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int newCapacity &#x3D; oldCapacity + ((capacityIncrement &gt; 0) ?</span><br><span class="line">                                         capacityIncrement : oldCapacity);</span><br></pre></td></tr></table></figure>
+<p>可以得知，当<code>capacityIncrement</code>数值大于0时，则每次扩容的数值等于该值，否则每次扩容为原来的二倍即<br>Vector<String> v = new Vector<String>(); // 10,20,40,80,160,320 的速度递增<br>Vector<String> v2 = new Vector&lt;&gt;(5,5);// 5,10,15,20,25 的速度递增。</String></String></String></p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>首先看一下jdk1.8 API中关于HashMap的介绍：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/9.png" alt="HashMap"><br>可以看到HashMap是基于哈希表的 Map接口的实现。允许 null值和 null关键。其中构造方法如下：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/10.png" alt="HashMap"><br>HashMap(int initialCapacity, float loadFactor)：构造一个空 HashMap具有指定的初始容量和加载因子。<br>HashMap(int initialCapacity)：构建了一个具有指定的初始容量和加载因子空 HashMap（0.75）。<br>HashMap()：构造一个默认的初始容量的空 HashMap（16）和默认的加载因子（0.75）。<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/11.png" alt="HashMap"><br>如图所示可以看到默认大小为16，加载因子为0.75，最大值为2的30次方<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/12.png" alt="HashMap"><br>如图可以看到HashMap扩容的时候是成倍的进行扩容的。</p>
+<h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><p>首先看一下jdk1.8 API中关于Hashtable的介绍：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/13.png" alt="Hashtable"><br>可以看到HashMap也是基于哈希表的。不允许 null值和 null关键。其中构造方法如下：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/14.png" alt="Hashtable"><br>Hashtable(int initialCapacity, float loadFactor) ：构建一个新的空哈希表的指定初始容量和负载因子。<br>Hashtable(int initialCapacity) ：构建一个新的空哈希表指定初始容量和加载因子（0.75）。<br>Hashtable() ：构建一个新的空哈希表默认初始容量（11）和负载因子（0.75）。如下图所示：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/15.png" alt="Hashtable"><br>根据下图可以看出Hashtable扩容是原来的两倍+1：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/16.png" alt="Hashtable"></p>
+<h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><p>首先看一下jdk1.8 API中关于ConcurrentHashMap的介绍：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/19.png" alt="ConcurrentHashMap"><br>构造方法如下：<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/20.png" alt="ConcurrentHashMap"><br>其底层是使用了<code>U.compareAndSwapXXXX</code>CAS来实现的。</p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set是基于对应的Map实现的，所以扩容机制与对应的Map保持一致。<br>通过下图HashSet的源码可以得知，HashSet的就是基于HashMap实现的<br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/17.png" alt="HashSet"><br><img src="/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/18.png" alt="HashSet"></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/04/22/Java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E9%BB%98%E8%AE%A4%E5%A4%A7%E5%B0%8F%E5%8F%8A%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/05/17/JVM%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JVM总结
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/03/02/%E6%B5%85%E8%B0%88Java%E9%9B%86%E5%90%88%E4%B8%ADList%E3%80%81Set%E3%80%81Map/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈Java集合中List、Set、Map</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java常见集合默认大小及扩容机制"><span class="toc-number">1.</span> <span class="toc-text">Java常见集合默认大小及扩容机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概述"><span class="toc-number">1.1.</span> <span class="toc-text">1.概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.2.</span> <span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">ArrayList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">Vector</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map"><span class="toc-number">1.3.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HashMap"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">HashMap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hashtable"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">Hashtable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ConcurrentHashMap"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">ConcurrentHashMap</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set"><span class="toc-number">1.4.</span> <span class="toc-text">Set</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -227,8 +412,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
