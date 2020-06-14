@@ -6,25 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>Spring4总结 | 杨翔宇的博客</title>
+  <title>Archives | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spring4总结">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring4总结">
-<meta property="og:url" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="杨翔宇的博客">
+<meta property="og:url" content="https://twelveyu.github.io/archives/page/2/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
-<meta property="og:description" content="Spring4总结">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/1.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/2.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/3.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/4.png">
-<meta property="og:image" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/5.png">
-<meta property="article:published_time" content="2020-06-11T11:04:37.000Z">
-<meta property="article:modified_time" content="2020-06-11T15:49:23.861Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://twelveyu.github.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/1.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -169,316 +159,117 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Spring4总结" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      Spring4总结
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/10/12/Maven%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2019-10-12T02:58:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/10/12/Maven%E6%80%BB%E7%BB%93/">Maven总结</a>
     </h1>
   
 
-        
-        <a href="/2020/06/11/Spring4%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-06-11T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring4总结"><a href="#Spring4总结" class="headerlink" title="Spring4总结"></a>Spring4总结</h1><a id="more"></a>
-<h2 id="Spring简介"><a href="#Spring简介" class="headerlink" title="Spring简介"></a>Spring简介</h2><ul>
-<li>Spring是一个开源框架。</li>
-<li>Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能。</li>
-<li>Spring是一个IOC(DI)和AOP容器框架。</li>
-<li>轻量级：Spring是非侵入性的，基于Spring开发的应用中对象可以不依赖与Spring的API</li>
-<li>依赖注入(DI-dependency injection、IOC)</li>
-<li>面向切面编程(AOP–aspect oriented programming)</li>
-<li>容器：Spring是一个容器，因为它包含并且管理应用对象的生命周期</li>
-<li>框架：Spring实现了使用简单的组件配置组合成一个复杂的应用，在Spring中可以使用XML和Java注解组合这些对象</li>
-<li>一站式：在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的第三方类库(实际上Spring自身也提供了展现层的SpringMVC和持久层的Spring JDBC)</li>
-</ul>
-<h2 id="Spring模块"><a href="#Spring模块" class="headerlink" title="Spring模块"></a>Spring模块</h2><p><img src="/2020/06/11/Spring4%E6%80%BB%E7%BB%93/1.png" alt="Spring"></p>
-<h2 id="IOC和DI"><a href="#IOC和DI" class="headerlink" title="IOC和DI"></a>IOC和DI</h2><ul>
-<li>IOC(inversion of Control):其思想是反转资源获取的方向，传统的资源查找方式要求组件向容器发起请求查找资源，作为回应，容器适时的返回资源，而应用了IOC之后，则是容器主动地将资源推送给它所管理的组件，组件所要做的仅是选择一种合适的方式来接受资源，这种行为也被称为查找的被动形式</li>
-<li>DI(Dependency Injection)-IOC的另一种表述方式：即组件以一些预先定义好的方式(例如：setter方法)接受来自如容器的资源注入，相对于IOC而言，这种表述更直接。</li>
-</ul>
-<h2 id="配置bean"><a href="#配置bean" class="headerlink" title="配置bean"></a>配置bean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">    配置bean</span><br><span class="line">    class：bean的全类名，通过反射的方式在IOC容器中创建Bean，所以要求Bean中必须有无参数的构造器</span><br><span class="line">    id:标识容器中bean，id唯一。</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;helloWorld&quot; class&#x3D;&quot;com.twelveyu.spring.beans.HelloWorld&quot;&gt;</span><br><span class="line">    &lt;property name&#x3D;&quot;hello&quot; value&#x3D;&quot;Spring&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>创建Spring的IOC容器对象<br><code>ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</code></li>
-<li>从IOC容器中获取Bean实例<br><code>HelloWorld helloworld = (HelloWorld) ctx.getBean(&quot;helloWorld&quot;);</code></li>
-<li>调用hello方法<br><code>helloword.hello();</code></li>
-</ol>
-<h3 id="Spring容器"><a href="#Spring容器" class="headerlink" title="Spring容器"></a>Spring容器</h3><ul>
-<li>在SpringIOC容器读取Bean配置创建Bean实例之前，必须对它进行实例化，只有在容器实例化后，才可以从IOC容器里获取Bean实例并使用。</li>
-<li>Spring提供了两种类型的IOC容器实现<br>– BeanFactory：IOC容器的基本实现<br>– ApplicationContext：提供了更多的高级特性，是BeanFactory的子接口</li>
-</ul>
-<p>BeanFactory是Spring框架的基础设施，面向Spring本身；ApplicationContext面向使用Spring框架的开发者，<code>几乎所有的应用场合都直接使用ApplicationContext而非底层的BeanFactory</code>无论使用何种方式，配置文件是相同的。</p>
-<h3 id="依赖注入的方式"><a href="#依赖注入的方式" class="headerlink" title="依赖注入的方式"></a>依赖注入的方式</h3><p>Spring支持3中依赖注入的方式</p>
-<ul>
-<li>属性注入(上面例子即为属性注入)<br>属性注入即通过setter方法注入Bean的属性值或依赖的对象，属性注入使用<property>元素，使用name属性指定Bean的属性名称，value属性或<value>子节点指定属性值，属性注入是实际应用中最常用的注入方式。</value></property></li>
-<li>构造器注入<br>通过构造方法注入Bean的属性值或依赖的对象，它保证了Bean实例在实例化后就可以使用，构造器注入在<constructor-arg>元素里声明属性，<constructor-arg>中没有name属性<br><img src="/2020/06/11/Spring4%E6%80%BB%E7%BB%93/2.png" alt="Spring"></constructor-arg></constructor-arg></li>
-<li>工厂方式注入(很少使用，不推荐)</li>
-</ul>
-<h3 id="引用其他Bean"><a href="#引用其他Bean" class="headerlink" title="引用其他Bean"></a>引用其他Bean</h3><ul>
-<li>组成应用程序的Bean经常需要相互协作以完成应用程序的功能，要使Bean能够相互访问，就必须在Bean配置文件中指定对Bean的引用</li>
-<li>就必须在Bean配置文件中，可以通过<ref>元素或ref属性为Bean的属性或构造器参数指定对Bean的引用。</ref></li>
-<li>也可以在属性或构造器里包含Bean的声明，这样的Bean称为内部Bean</li>
-</ul>
-<h3 id="集合属性"><a href="#集合属性" class="headerlink" title="集合属性"></a>集合属性</h3><ul>
-<li>在Spring中可以通过一组内置的xml标签(例如：<list>，<set>或<map>)来配置集合属性。</map></set></list></li>
-<li>配置java.util.List类型的属性，需要指定<list>标签，在标签里包含一些元素，这些标签可以通过<value>指定简单的常量值，通过<ref>指定对其他Bean的引用，通过<bean>指定内部Bean定义，通过<null>指定空元素，甚至可以内嵌其他集合。</null></bean></ref></value></list></li>
-<li>数组的定义和List一样，都是用<list></list></li>
-<li>配置java.util.Set需要使用<set>标签，定义元素的方法与List一样</set></li>
-<li>java.util.Map通过<map>标签定义，<map>标签里可以使用多个<entry>作为子标签，每个条目包含一个键和一个值。</entry></map></map></li>
-<li>必须在<key>标签里定义键</key></li>
-<li>因为键和值的类型没有限制，所以可以自由地为它们指定<value><ref><bean><null>元素。</null></bean></ref></value></li>
-<li>可以将Map的键和值作为<entry>的属性定义：简单常量使用key和value来定义；Bean引用通过key-ref和value-ref属性定义</entry></li>
-<li>使用<props>定义java.util.Properties，该标签使用多个<prop>作为子标签，每个<prop>标签必须定义key属性。</prop></prop></props></li>
-</ul>
-<h3 id="使用p命名空间"><a href="#使用p命名空间" class="headerlink" title="使用p命名空间"></a>使用p命名空间</h3><ul>
-<li>为了简化xml文件的配置，越来越多的xml文件采用属性而非子元素配置信息。</li>
-<li>Spring从2.5版本开始引入了一个新的p命名空间，可以通过<bean>元素属性的方式配置Bean的属性。</bean></li>
-<li>使用p命名空间后，基于xml的配置方式将进一步简化<br><img src="/2020/06/11/Spring4%E6%80%BB%E7%BB%93/3.png" alt="Spring"></li>
-</ul>
-<h3 id="XML配置里的Bean自动装配"><a href="#XML配置里的Bean自动装配" class="headerlink" title="XML配置里的Bean自动装配"></a>XML配置里的Bean自动装配</h3><ul>
-<li>SpringIOC容器可以自动装配Bean，需要做的仅仅是在<bean>的autowire属性里指定自动装配的模式</bean></li>
-<li>byType(根据类型自动装配)：若IOC容器中有多个与目标Bean类型一致的Bean，在这种情况下，Spring将无法判定那个Bean是合适该属性，所以不能执行自动装配</li>
-<li>byName(根据名称自动装配)：必须将目标Bean的名称和属性名设置的完全相同</li>
-<li>constructor(通过构造器自动装配)：当Bean中存在多个构造器时，此种自动装配方式将会很复杂，不推荐使用</li>
-</ul>
-<h3 id="XML配置里的Bean自动装配的缺点"><a href="#XML配置里的Bean自动装配的缺点" class="headerlink" title="XML配置里的Bean自动装配的缺点"></a>XML配置里的Bean自动装配的缺点</h3><ul>
-<li>在Bean配置文件里设置autowire属性进行自动装配将会装配Bean的所有属性，然而，若只希望装配个别属性时，autowire属性就不够灵活了</li>
-<li>autowire属性要么根据类型自动装配，要么根据名称自动装配，不能两者兼而有之</li>
-<li>一般情况下，在实际的项目中很少使用自动装配功能，因为和自动装配功能所带来的好处比起来，明确清晰的配置文档更有说服力一些</li>
-</ul>
-<h3 id="继承Bean配置"><a href="#继承Bean配置" class="headerlink" title="继承Bean配置"></a>继承Bean配置</h3><ul>
-<li>Spring允许继承bean的配置，被继承的bean称为父bean，继承这个父bean的bean称为子bean</li>
-<li>子bean从父bean中继承配置，包括bean的属性配置</li>
-<li>子bean也可以覆盖从父bean继承过来的配置<br>父bean可以作为配置模板，也可以作为bean实例，若只想把父bean作为模板，可以设置<bean>的abstract属性为true，这样Spring将不会实例化这个bean</bean></li>
-<li>并不是<bean>元素里的所有属性都会被继承，比如:autowire，abstract等</bean></li>
-<li>也可以忽略父bean的class属性，让子bean指定自己的类，而共享相同的配置属性，但此时abstract必须设为true</li>
-</ul>
-<h3 id="依赖Bean配置"><a href="#依赖Bean配置" class="headerlink" title="依赖Bean配置"></a>依赖Bean配置</h3><ul>
-<li>Spring允许用户通过depends-on属性设定Bean前置依赖的Bean，前置依赖的bean会在本Bean实例化之前创建好</li>
-<li>如果前置依赖于多个Bean，则可以通过逗号，空格或的方式配置Bean的名称</li>
-</ul>
-<h3 id="Bean的作用域"><a href="#Bean的作用域" class="headerlink" title="Bean的作用域"></a>Bean的作用域</h3><p>使用Bean的scope属性来配置bean的作用域</p>
-<ul>
-<li>singleton：默认值，容器初始时创建bean实例，在整个容器的生命周期内只创建这一个bean，单例的</li>
-<li>prototype：原型的，容器初始化时不创建bean的实例，而在每次请求时都创建一个新的Bean实例，并返回</li>
-<li>request：该属性仅对HTTP请求产生作用，使用该属性定义Bean时，每次HTTP请求都会创建一个新的Bean，适用于WebApplicationContext环境。</li>
-<li>session：该属性仅用于HTTP Session，同一个Session共享一个Bean实例。不同Session使用不同的实例。</li>
-<li>global-session：该属性仅用于HTTP Session，同session作用域不同的是，所有的Session共享一个Bean实例。</li>
-</ul>
-<h3 id="IOC容器中Bean的生命周期方法"><a href="#IOC容器中Bean的生命周期方法" class="headerlink" title="IOC容器中Bean的生命周期方法"></a>IOC容器中Bean的生命周期方法</h3><ul>
-<li>SpringIOC容器可以管理Bean的生命周期，Spring允许在Bean生命周期的特定点执行定制的任务</li>
-<li>SpringIOC容器对Bean的生命周期进行管理的过程：<br>–通过构造器或工厂方法创建Bean实例<br>–为Bean的属性设置值和对其他Bean的引用<br>–调用Bean的初始化方法<br>–Bean可以使用了<br>–当容器关闭时，调用Bean的销毁方法</li>
-<li>在Bean的声明里设置init-method和destroy-method属性，为Bean指定初始化和销毁方法</li>
-</ul>
-<h3 id="通过调用静态工厂方法创建Bean"><a href="#通过调用静态工厂方法创建Bean" class="headerlink" title="通过调用静态工厂方法创建Bean"></a>通过调用静态工厂方法创建Bean</h3><ul>
-<li>调用静态工厂方法创建Bean是将对象创建的过程封装到静态方法中，当客户端需要对象时，只需要简单地调用静态方法，而不用关心创建对象的细节</li>
-<li>要声明通过静态方法创建的Bean，需要在Bean的class属性里指定拥有该工厂的方法的类，同时在factory-method属性里指定工厂方法的名称，最后使用<constructor-arg>元素为该方法传递方法参数</constructor-arg></li>
-</ul>
-<h3 id="通过调用实例工厂方法创建Bean"><a href="#通过调用实例工厂方法创建Bean" class="headerlink" title="通过调用实例工厂方法创建Bean"></a>通过调用实例工厂方法创建Bean</h3><ul>
-<li>实例工厂方法：将对象的创建过程封装到另外一个对象实例的方法里，当客户端需要请求对象时，只需要简单的调用该实例方法而不需要关心对象的创建细节</li>
-<li>要声明通过实例工厂方法创建的Bean<br>–在bean的factory-bean属性里指定拥有该工厂方法的Bean<br>–在factory-method属性里指定该工厂方法的名称<br>–使用constructor-arg元素为工厂方法传递方法参数  </li>
-</ul>
-<h3 id="通过注解配置Bean"><a href="#通过注解配置Bean" class="headerlink" title="通过注解配置Bean"></a>通过注解配置Bean</h3><h5 id="在classpath中扫描组件"><a href="#在classpath中扫描组件" class="headerlink" title="在classpath中扫描组件"></a>在classpath中扫描组件</h5><ul>
-<li>组件扫描(component scanning):Spring能够从classpath下自动扫描，侦测和实例化具有特点注解的组件</li>
-<li>特定组件包括：<br>–@Component：基本注解，标识了一个受Spring管理的组件<br>–@Respository：标识持久层组件<br>–@Service：标识服务层(业务层)组件<br>–@Controller：标识表现层组件</li>
-<li>对于扫描到的组件，Spring有默认的命名策略：使用非限定类名，第一个字母小写，也可以在注解中通过value属性值标识组件的名称<br><img src="/2020/06/11/Spring4%E6%80%BB%E7%BB%93/4.png" alt="Spring"><br><img src="/2020/06/11/Spring4%E6%80%BB%E7%BB%93/5.png" alt="Spring"><br>Spring笔记</li>
-</ul>
-<p>Spring一站式框架<br>1、spring在javaee三层结构中，每一层都提供不同的解决技术<br>web层：springMVC<br>service层：spring的ioc<br>dao层：spring的jdbcTemplate</p>
-<p>ioc的底层原理<br>第一步：创建xml配置文件，配置要创建对象类<br>第二步：创建工厂类，使用dom4j解析配置文件+反射</p>
-<p>bean实例化三种方式实现<br>第一种：使用类的无参数构造方法创建（如有有参构造方法则失败）<br>第二种：使用静态工厂创建<br>第三种：使用实例工厂创建</p>
-<p>Spring的bean管理（注解）</p>
-<p>  spring注解开发准备<br>    1.导入jar包<br>    2.创建类，创建方法<br>    3.创建spring配置文件，引入约束<br>     （1）做ioc基本功能，引入约束beans<br>     （2）做spring的ico注解开发，引入新的context约束<br>    4.开启注解扫描</p>
-<p>  注解创建对象<br>    1.在创建对象的类上面使用注解实现<br>    @Component（value=“user”） //<bean id="user" class><br>    2.创建对象有四个注解<br>    spring中提供@Component的三个衍生注解：（功能目前来讲是一致的）<br>    @Controller :web层<br>    @service  :业务层<br>    @Repository ：持久层<br>    这三个注解是为了让标注类本身的用途清晰，Spring在后续版本会对其增强<br>    3.创建对象单实例还是多实例<br>    @Scope（value=”prototype”)不写默认为单实例</bean></p>
-<p>  注解注入属性<br>    注入属性第一个注解@Autowired，可以不与类注解的value值保持一致<br>    1.创建service类，创建dao类，在service得到dao对象<br>    注入属性第二个注解@Resource（name=””）必须和类的@Component（value=“user”）中value值保持一致</p>
-<pre><code>配置文件和注解混合使用
-1.创建对象操作使用配置文件方式实现
-2.注入属性的操作使用注解方式实现</code></pre><p>AOP<br>  1.aop概述<br>    aop：面向切面（方面）编程，扩展功能不修改源代码实现<br>    aop采取横向抽取机制，取代了传统纵向继承体系重复性代码（性能监视、事务管理、安全检查、缓存）</p>
-<p>  2.aop底层原理<br>    aop：横向抽取机制，底层使用 动态代理方式实现<br>    有接口：（使用jdk动态代理）使用动态代理方法，创建接口实现类代理对象（和实现类平行的关系）<br>    无接口：（使用cglib动态代理）创建类的子类的代理对象，在子类里面调用父类的方法完成增强</p>
-<p>  3.aop操作相关术语<br>    Pointcut（切入点）：所谓切入点是指我们要对哪些Joinpoint进行拦截的定义<br>    Advice（通知/增强）：所谓通知是指拦截到Joinpoint之后所要做的事情就是通知，通知分为前置通知，后置通知，异常通知，最终通知，环绕通知（切面要完成的功能）<br>    Aspect（切面）：是切入点和通知（引介）的结合</p>
-<p>Spring的aop操作（基于aspectj的xml方式）<br>  1.在Spring里面进行aop操作，使用aspectj实现。<br>    （1）.aspectj不是Spring一部分，和Spring一起使用进行aop操作<br>    （2）.Spring2.0以后新增了对aspectj支持</p>
-<p>  2.使用aspectj实现aop有两种方式<br>    （1）.基于aspectj的xml配置<br>      配置对象<br>      配置aop操作（配置切入点–配置切面，把增强用到方法上面–配置增强类型，method：增强类里面使用那个方法作为前置）<br>    （2）.基于aspectj的注解方式（会用）<br>      创建对象<br>      在spring核心配置文件中，开启aop操作<br>      在增强类上面使用注解完成aop操作（@Before（value=“execution（*com.aop.Book.add(..)）”））</p>
-<p>  aop操作准备<br>    1.除了导入基本的jar包之外，还需要导入aop相关的jar包<br>    2.创建spring的核心配置文件，导入aop约束</p>
-<p>  使用表达式配置切入点<br>    1.切入点：实际增强的方法<br>    2.常用的表达式<br>    execution（&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;）<br>      （1）execution（*com.aop.Book.add(..)）<br>      （2）execution(*com.aop.Book.*(..))<br>      （3）execution(*<em>.\</em>(..))<br>      （4）匹配所有add开头的方法execution(*add*(..))</p>
-<p>log4j介绍<br>  1.通过log4j可以看到程序运行过程中更详细的信息<br>    经常使用log4j查看日志</p>
-<p>  2.使用<br>   导入log4j的jar包<br>   复制log4j的配置文件，复制到src下面</p>
-<p>Spring的jdbcTemplate操作<br>  1.Spring框架一站式框架<br>    针对javaee三层，每一层都有解决技术<br>    在dao层，使用jdbctemplate</p>
-<p>  2.Spring对不同的持久化层技术都进行封装<br>    JDBC–org.springframework.jdbc.core.JdbcTemplate<br>    Hibernate5.0–org.springframework.orm.hibernate5.HibernateTemplate<br>    IBatis(MyBatis)–org.springframework.orm.ibatis.SqlMapClientTemplate<br>    JPA–org.springframework.orm.jpa.JpaTemplate<br>    JdbcTemplate对jdbc进行封装</p>
-<p>  3.jdbcTemplate使用和dbutils使用很相似，都可以对数据库进行crud操作<br>    增删改 update方法<br>      1.导入jdbcTemplate使用的jar包<br>      2.创建对象，设置数据库信息<br>      3.创建jdbcTemplate对象，设置数据源<br>      4.调用jdbcTemplate对象里面的方法实现操作<br>    查询<br>      1.使用jdbcTemplate实现查询操作<br>      2.查询具体实现<br>        第一个，查询返回某一个值：queryForObject<br>        第二个，查询返回对象：queryForObject<br>        第三个，查询返回list集合：query</p>
-<p>  Spring配置连接池和dao使用jdbcTemplate<br>    1.Spring配置c3p0连接池<br>      第一步：导入jar包<br>      第二步：创建Spring配置文件，配置连接池（ComboPooledDataSource）<br>        把代码在配置文件中进行配置<br>    2.dao使用jdbcTemplate<br>      （1）创建service和dao，配置service和dao对象，在service注入dao对象<br>      （2）创建jdbcTemplate对象，把模板对象注入到dao里面<br>      （3）在jdbcTemplate对象里面注入dataSource</p>
-<p>Spring的事务管理<br>  API<br>  1.spring事务管理两种方式<br>  第一种 编程式事务管理（需要写代码不用）<br>  第二种声明式事务管理<br>    （1）基于xml配置文件实现<br>      第一步 配置事务管理器 注入DataSource<br>      第二步 配置事务增强 设置进行事务操作的方法匹配规则<br>      第三部 配置切面 切入点 切面<br>    （2）基于注解实现<br>      第一步 配置事务管理器<br>      第二步 配置事务注解<br>      第三步 在要使用事务的方法所在类上面添加注解</p>
-<p>  2.spring事务管理的api介绍<br>    接口 PlatformTransactionManager 事务管理器<br>    spring针对不同的dao层框架，提供接口不同的实现类</p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/zhifubao.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2020/06/11/Spring4%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2020/06/11/JUC%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JUC总结
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/01/JMM%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JMM总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/08/28/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/" class="archive-article-date">
+  	<time datetime="2019-08-28T14:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring4总结"><span class="toc-number">1.</span> <span class="toc-text">Spring4总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring简介"><span class="toc-number">1.1.</span> <span class="toc-text">Spring简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring模块"><span class="toc-number">1.2.</span> <span class="toc-text">Spring模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC和DI"><span class="toc-number">1.3.</span> <span class="toc-text">IOC和DI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置bean"><span class="toc-number">1.4.</span> <span class="toc-text">配置bean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring容器"><span class="toc-number">1.4.1.</span> <span class="toc-text">Spring容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖注入的方式"><span class="toc-number">1.4.2.</span> <span class="toc-text">依赖注入的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用其他Bean"><span class="toc-number">1.4.3.</span> <span class="toc-text">引用其他Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合属性"><span class="toc-number">1.4.4.</span> <span class="toc-text">集合属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用p命名空间"><span class="toc-number">1.4.5.</span> <span class="toc-text">使用p命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML配置里的Bean自动装配"><span class="toc-number">1.4.6.</span> <span class="toc-text">XML配置里的Bean自动装配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML配置里的Bean自动装配的缺点"><span class="toc-number">1.4.7.</span> <span class="toc-text">XML配置里的Bean自动装配的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承Bean配置"><span class="toc-number">1.4.8.</span> <span class="toc-text">继承Bean配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖Bean配置"><span class="toc-number">1.4.9.</span> <span class="toc-text">依赖Bean配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean的作用域"><span class="toc-number">1.4.10.</span> <span class="toc-text">Bean的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IOC容器中Bean的生命周期方法"><span class="toc-number">1.4.11.</span> <span class="toc-text">IOC容器中Bean的生命周期方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过调用静态工厂方法创建Bean"><span class="toc-number">1.4.12.</span> <span class="toc-text">通过调用静态工厂方法创建Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过调用实例工厂方法创建Bean"><span class="toc-number">1.4.13.</span> <span class="toc-text">通过调用实例工厂方法创建Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过注解配置Bean"><span class="toc-number">1.4.14.</span> <span class="toc-text">通过注解配置Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在classpath中扫描组件"><span class="toc-number">1.4.14.0.1.</span> <span class="toc-text">在classpath中扫描组件</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/28/%E7%94%A8hexo%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99Template%20render%20error%20(unknown%20path)/">用hexo博客报错Template render error (unknown path)解决方法</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
         </div>
-        
-    </div>
-</aside>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/08/26/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-08-26T05:16:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/26/Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/">Hexo发布博客引用自带图片的方法</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+          
 
-
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
   
-
-  
-
-  
-
 
 
           </div>
@@ -505,8 +296,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
