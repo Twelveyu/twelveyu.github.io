@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>杨翔宇的博客</title>
+  <title>设计模式-解释器模式 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杨翔宇的博客">
-<meta property="og:url" content="https://twelveyu.github.io/page/2/index.html">
+  <meta name="description" content="解释器模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-解释器模式">
+<meta property="og:url" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
+<meta property="og:description" content="解释器模式">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/61.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/62.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/63.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/64.png">
+<meta property="article:published_time" content="2022-03-06T11:04:37.000Z">
+<meta property="article:modified_time" content="2022-03-24T13:43:00.694Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/61.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -159,600 +168,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-设计模式-外观模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-设计模式-解释器模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">设计模式-外观模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-桥接模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">设计模式-桥接模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-建造者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式-建造者模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-状态模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">设计模式-状态模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-模板方法模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">设计模式-模板方法模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-策略模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">设计模式-策略模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-组合模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">设计模式-组合模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-装饰者设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式-装饰者设计模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="装饰者设计模式"><a href="#装饰者设计模式" class="headerlink" title="装饰者设计模式"></a>装饰者设计模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-观察者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式-观察者模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-解释器模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">设计模式-解释器模式</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式-解释器模式
     </h1>
   
 
@@ -765,12 +188,88 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
+        <h1 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h1><a id="more"></a>
+<h2 id="解释器模式-1"><a href="#解释器模式-1" class="headerlink" title="解释器模式"></a>解释器模式</h2><h3 id="四则运算问题"><a href="#四则运算问题" class="headerlink" title="四则运算问题"></a>四则运算问题</h3><p>通过解释器模式来实现四则运算，如计算 a+b-c 的值，具体要求</p>
+<ol>
+<li>先输入表达式的形式，比如 a+b+c-d+e, 要求表达式的字母不能重复</li>
+<li>在分别输入 a ,b, c, d, e 的值</li>
+<li>最后求出结果：如图</li>
+</ol>
+<p><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/61.png" alt="设计模式"></p>
+<h3 id="传统方案解决四则运算问题分析"><a href="#传统方案解决四则运算问题分析" class="headerlink" title="传统方案解决四则运算问题分析"></a>传统方案解决四则运算问题分析</h3><ol>
+<li>编写一个方法，接收表达式的形式，然后根据用户输入的数值进行解析，得到结果</li>
+<li>问题分析：如果加入新的运算符，比如 * / ( 等等，不利于扩展，另外让一个方法来解析会造成程序结构混乱，不够清晰.</li>
+<li>解决方案：可以考虑使用解释器模式， 即： 表达式 -&gt; 解释器(可以有多种) -&gt; 结果</li>
+</ol>
+<h3 id="解释器模式基本介绍"><a href="#解释器模式基本介绍" class="headerlink" title="解释器模式基本介绍"></a>解释器模式基本介绍</h3><ol>
+<li>在编译原理中，一个算术表达式通过词法分析器形成词法单元，而后这些词法单元再通过语法分析器构建语法分析树，最终形成一颗抽象的语法分析树。这里的词法分析器和语法分析器都可以看做是解释器</li>
+<li>解释器模式（Interpreter Pattern）：是指给定一个语言(表达式)，定义它的文法的一种表示，并定义一个解释器，使用该解释器来解释语言中的句子(表达式)</li>
+<li>应用场景</li>
+</ol>
+<ul>
+<li>应用可以将一个需要解释执行的语言中的句子表示为一个抽象语法树</li>
+<li>一些重复出现的问题可以用一种简单的语言来表达</li>
+<li>一个简单语法需要解释的场景</li>
+</ul>
+<ol start="4">
+<li>这样的例子还有，比如编译器、运算表达式计算、正则表达式、机器人等</li>
+</ol>
+<h3 id="解释器模式的原理类图"><a href="#解释器模式的原理类图" class="headerlink" title="解释器模式的原理类图"></a>解释器模式的原理类图</h3><p><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/62.png" alt="设计模式"></p>
+<p>对原理类图的说明-即(解释器模式的角色及职责)</p>
+<ol>
+<li>Context: 是环境角色,含有解释器之外的全局信息.</li>
+<li>AbstractExpression: 抽象表达式， 声明一个抽象的解释操作,这个方法为抽象语法树中所有的节点所共享</li>
+<li>TerminalExpression: 为终结符表达式, 实现与文法中的终结符相关的解释操作</li>
+<li>NonTermialExpression: 为非终结符表达式，为文法中的非终结符实现解释操作.</li>
+<li>说明： 输入 Context he TerminalExpression 信息通过 Client 输入即可</li>
+</ol>
+<h3 id="解释器模式来实现四则"><a href="#解释器模式来实现四则" class="headerlink" title="解释器模式来实现四则"></a>解释器模式来实现四则</h3><ol>
+<li>应用实例要求通过解释器模式来实现四则运算，<br>如计算 a+b-c 的值</li>
+<li>思路分析和图解(类图)</li>
+</ol>
+<p><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/63.png" alt="设计模式"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * 加法解释器</span><br><span class="line"> * @author Administrator</span><br><span class="line"> *</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class AddExpression extends SymbolExpression &#123;</span><br><span class="line">    public AddExpression(Expression left, Expression right) &#123;</span><br><span class="line">        super(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;处理相加</span><br><span class="line">&#x2F;&#x2F;var 仍然是 &#123;a&#x3D;10,b&#x3D;20&#125;..</span><br><span class="line">&#x2F;&#x2F;一会我们 debug 源码,就 ok</span><br><span class="line">    public int interpreter(HashMap&lt;String, Integer&gt; var) &#123;</span><br><span class="line">&#x2F;&#x2F;super.left.interpreter(var) ： 返回 left 表达式对应的值 a &#x3D; 10</span><br><span class="line">&#x2F;&#x2F;super.right.interpreter(var): 返回 right 表达式对应值 b &#x3D; 20</span><br><span class="line">        return super.left.interpreter(var) + super.right.interpreter(var);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Calculator &#123;</span><br><span class="line">    &#x2F;&#x2F; 定义表达式</span><br><span class="line">    private Expression expression;</span><br><span class="line">    &#x2F;&#x2F; 构造函数传参，并解析</span><br><span class="line">    public Calculator(String expStr) &#123; &#x2F;&#x2F; expStr &#x3D; a+b</span><br><span class="line">&#x2F;&#x2F; 安排运算先后顺序</span><br><span class="line">        Stack&lt;Expression&gt; stack &#x3D; new Stack&lt;&gt;();</span><br><span class="line">&#x2F;&#x2F; 表达式拆分成字符数组</span><br><span class="line">        char[] charArray &#x3D; expStr.toCharArray();&#x2F;&#x2F; [a, +, b]</span><br><span class="line">        Expression left &#x3D; null;</span><br><span class="line">        Expression right &#x3D; null;</span><br><span class="line">&#x2F;&#x2F;遍历我们的字符数组， 即遍历 [a, +, b]</span><br><span class="line">&#x2F;&#x2F;针对不同的情况，做处理</span><br><span class="line">        for (int i &#x3D; 0; i &lt; charArray.length; i++) &#123;</span><br><span class="line">            switch (charArray[i]) &#123;</span><br><span class="line">                case &#39;+&#39;: &#x2F;&#x2F;</span><br><span class="line">                    left &#x3D; stack.pop();&#x2F;&#x2F; 从 stack 取出 left &#x3D;&gt; &quot;a&quot;</span><br><span class="line">                    right &#x3D; new VarExpression(String.valueOf(charArray[++i]));&#x2F;&#x2F; 取出右表达式 &quot;b&quot;</span><br><span class="line">                    stack.push(new AddExpression(left, right));&#x2F;&#x2F; 然后根据得到 left 和 right 构建 AddExpresson 加入</span><br><span class="line">                    stack</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;-&#39;: &#x2F;&#x2F;</span><br><span class="line">                    left &#x3D; stack.pop();</span><br><span class="line">                    right &#x3D; new VarExpression(String.valueOf(charArray[++i]));</span><br><span class="line">                    stack.push(new SubExpression(left, right));</span><br><span class="line">                    break;</span><br><span class="line">                default:</span><br><span class="line">&#x2F;&#x2F;如果是一个 Var 就创建要给 VarExpression 对象，并 push 到 stack</span><br><span class="line">                    stack.push(new VarExpression(String.valueOf(charArray[i])));</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#x2F;&#x2F;当遍历完整个 charArray 数组后，stack 就得到最后 Expression</span><br><span class="line">        this.expression &#x3D; stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    public int run(HashMap&lt;String, Integer&gt; var) &#123;</span><br><span class="line">&#x2F;&#x2F;最后将表达式 a+b 和 var &#x3D; &#123;a&#x3D;10,b&#x3D;20&#125;</span><br><span class="line">&#x2F;&#x2F;然后传递给 expression 的 interpreter 进行解释执行</span><br><span class="line">        return this.expression.interpreter(var);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class ClientTest &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        String expStr &#x3D; getExpStr(); &#x2F;&#x2F; a+b</span><br><span class="line">        HashMap&lt;String, Integer&gt; var &#x3D; getValue(expStr);&#x2F;&#x2F; var &#123;a&#x3D;10, b&#x3D;20&#125;</span><br><span class="line">        Calculator calculator &#x3D; new Calculator(expStr);</span><br><span class="line">        System.out.println(&quot;运算结果：&quot; + expStr + &quot;&#x3D;&quot; + calculator.run(var));</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 获得表达式</span><br><span class="line">    public static String getExpStr() throws IOException &#123;</span><br><span class="line">        System.out.print(&quot;请输入表达式：&quot;);</span><br><span class="line">        return (new BufferedReader(new InputStreamReader(System.in))).readLine();</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 获得值映射</span><br><span class="line">    public static HashMap&lt;String, Integer&gt; getValue(String expStr) throws IOException &#123;</span><br><span class="line">        HashMap&lt;String, Integer&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        for (char ch : expStr.toCharArray()) &#123;</span><br><span class="line">            if (ch !&#x3D; &#39;+&#39; &amp;&amp; ch !&#x3D; &#39;-&#39;) &#123;</span><br><span class="line">                if (!map.containsKey(String.valueOf(ch))) &#123;</span><br><span class="line">                    System.out.print(&quot;请输入&quot; + String.valueOf(ch) + &quot;的值：&quot;);</span><br><span class="line">                    String in &#x3D; (new BufferedReader(new InputStreamReader(System.in))).readLine();</span><br><span class="line">                    map.put(String.valueOf(ch), Integer.valueOf(in));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return map;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * 抽象类表达式，通过 HashMap 键值对, 可以获取到变量的值</span><br><span class="line"> *</span><br><span class="line"> * @author Administrator</span><br><span class="line"> *</span><br><span class="line"> *&#x2F;</span><br><span class="line">public abstract class Expression &#123;</span><br><span class="line">    &#x2F;&#x2F; a + b - c</span><br><span class="line">&#x2F;&#x2F; 解释公式和数值, key 就是公式(表达式) 参数[a,b,c], value 就是就是具体值</span><br><span class="line">&#x2F;&#x2F; HashMap &#123;a&#x3D;10, b&#x3D;20&#125;</span><br><span class="line">    public abstract int interpreter(HashMap&lt;String, Integer&gt; var);</span><br><span class="line">&#125;</span><br><span class="line">public class SubExpression extends SymbolExpression &#123;</span><br><span class="line">    public SubExpression(Expression left, Expression right) &#123;</span><br><span class="line">        super(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;求出 left 和 right 表达式相减后的结果</span><br><span class="line">    public int interpreter(HashMap&lt;String, Integer&gt; var) &#123;</span><br><span class="line">        return super.left.interpreter(var) - super.right.interpreter(var);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * 抽象运算符号解析器 这里，每个运算符号，都只和自己左右两个数字有关系，</span><br><span class="line"> * 但左右两个数字有可能也是一个解析的结果，无论何种类型，都是 Expression 类的实现类</span><br><span class="line"> *</span><br><span class="line"> * @author Administrator</span><br><span class="line"> *</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class SymbolExpression extends Expression &#123;</span><br><span class="line">    protected Expression left;</span><br><span class="line">    protected Expression right;</span><br><span class="line">    public SymbolExpression(Expression left, Expression right) &#123;</span><br><span class="line">        this.left &#x3D; left;</span><br><span class="line">        this.right &#x3D; right;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;因为 SymbolExpression 是让其子类来实现，因此 interpreter 是一个默认实现</span><br><span class="line">    @Override</span><br><span class="line">    public int interpreter(HashMap&lt;String, Integer&gt; var) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * 变量的解释器</span><br><span class="line"> * @author Administrator</span><br><span class="line"> *</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class VarExpression extends Expression &#123;</span><br><span class="line">    private String key; &#x2F;&#x2F; key&#x3D;a,key&#x3D;b,key&#x3D;c</span><br><span class="line">    public VarExpression(String key) &#123;</span><br><span class="line">        this.key &#x3D; key;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; var 就是&#123;a&#x3D;10, b&#x3D;20&#125;</span><br><span class="line">&#x2F;&#x2F; interpreter 根据 变量名称，返回对应值</span><br><span class="line">    @Override</span><br><span class="line">    public int interpreter(HashMap&lt;String, Integer&gt; var) &#123;</span><br><span class="line">        return var.get(this.key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解释器模式在-Spring-框架应用的源码剖析"><a href="#解释器模式在-Spring-框架应用的源码剖析" class="headerlink" title="解释器模式在 Spring 框架应用的源码剖析"></a>解释器模式在 Spring 框架应用的源码剖析</h3><p>Spring 框架中 SpelExpressionParser 就使用到解释器模式<br><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/64.png" alt="设计模式"></p>
+<h3 id="解释器模式的注意事项和细节"><a href="#解释器模式的注意事项和细节" class="headerlink" title="解释器模式的注意事项和细节"></a>解释器模式的注意事项和细节</h3><ol>
+<li>当有一个语言需要解释执行，可将该语言中的句子表示为一个抽象语法树，就可以考虑使用解释器模式，让程序具有良好的扩展性</li>
+<li>应用场景：编译器、运算表达式计算、正则表达式、机器人等</li>
+<li>使用解释器可能带来的问题：解释器模式会引起类膨胀、解释器模式采用递归调用方法，将会导致调试非常复杂、效率可能降低.</li>
+</ol>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -779,16 +278,85 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
+
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          设计模式-观察者模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式-访问者模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -803,18 +371,34 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#解释器模式"><span class="toc-number">1.</span> <span class="toc-text">解释器模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解释器模式-1"><span class="toc-number">1.1.</span> <span class="toc-text">解释器模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#四则运算问题"><span class="toc-number">1.1.1.</span> <span class="toc-text">四则运算问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传统方案解决四则运算问题分析"><span class="toc-number">1.1.2.</span> <span class="toc-text">传统方案解决四则运算问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器模式基本介绍"><span class="toc-number">1.1.3.</span> <span class="toc-text">解释器模式基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器模式的原理类图"><span class="toc-number">1.1.4.</span> <span class="toc-text">解释器模式的原理类图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器模式来实现四则"><span class="toc-number">1.1.5.</span> <span class="toc-text">解释器模式来实现四则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器模式在-Spring-框架应用的源码剖析"><span class="toc-number">1.1.6.</span> <span class="toc-text">解释器模式在 Spring 框架应用的源码剖析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器模式的注意事项和细节"><span class="toc-number">1.1.7.</span> <span class="toc-text">解释器模式的注意事项和细节</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+
   
+
 
 
           </div>
@@ -840,8 +424,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

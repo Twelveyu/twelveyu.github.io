@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>杨翔宇的博客</title>
+  <title>设计模式-原型模式 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杨翔宇的博客">
-<meta property="og:url" content="https://twelveyu.github.io/page/2/index.html">
+  <meta name="description" content="原型模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-原型模式">
+<meta property="og:url" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
+<meta property="og:description" content="原型模式">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/14.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/1.png">
+<meta property="article:published_time" content="2022-03-06T11:04:37.000Z">
+<meta property="article:modified_time" content="2022-03-24T13:45:15.039Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/14.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -159,20 +166,19 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-设计模式-外观模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-设计模式-原型模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">设计模式-外观模式</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式-原型模式
     </h1>
   
 
         
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
   	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
 </a>
         
@@ -180,12 +186,83 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
+        <h1 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h1><a id="more"></a>
+
+<h2 id="原型模式-1"><a href="#原型模式-1" class="headerlink" title="原型模式"></a>原型模式</h2><h3 id="克隆羊问题"><a href="#克隆羊问题" class="headerlink" title="克隆羊问题"></a>克隆羊问题</h3><p>现在有一只羊 tom，姓名为: tom, 年龄为：1，颜色为：白色，请编写程序创建和 tom 羊 属性完全相同的 10只羊。</p>
+<h3 id="传统方式解决克隆羊问题"><a href="#传统方式解决克隆羊问题" class="headerlink" title="传统方式解决克隆羊问题"></a>传统方式解决克隆羊问题</h3><p>思路分析(图解)</p>
+<p><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/14.png" alt="设计模式"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Client &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F;传统的方法</span><br><span class="line">        Sheep sheep &#x3D; new Sheep(&quot;tom&quot;, 1, &quot;白色&quot;);</span><br><span class="line">        Sheep sheep2 &#x3D; new Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());</span><br><span class="line">        Sheep sheep3 &#x3D; new Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());</span><br><span class="line">        Sheep sheep4 &#x3D; new Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());</span><br><span class="line">        Sheep sheep5 &#x3D; new Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());</span><br><span class="line">        &#x2F;&#x2F;....</span><br><span class="line">        System.out.println(sheep);</span><br><span class="line">        System.out.println(sheep2);</span><br><span class="line">        System.out.println(sheep3);</span><br><span class="line">        System.out.println(sheep4);</span><br><span class="line">        System.out.println(sheep5);</span><br><span class="line">        &#x2F;&#x2F;...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="传统的方式的优缺点"><a href="#传统的方式的优缺点" class="headerlink" title="传统的方式的优缺点"></a>传统的方式的优缺点</h3><ol>
+<li>优点是比较好理解，简单易操作。</li>
+<li>在创建新的对象时，总是需要重新获取原始对象的属性，如果创建的对象比较复杂时，效率较低</li>
+<li>总是需要重新初始化对象，而不是动态地获得对象运行时的状态, 不够灵活</li>
+<li>改进的思路分析<br>思路：Java 中 Object 类是所有类的根类，Object 类提供了一个 clone()方法，该方法可以将一个 Java 对象复制一份，但是需要实现 clone 的 Java 类必须要实现一个接口 Cloneable，该接口表示该类能够复制且具有复制的能力 =&gt;原型模式<h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3></li>
+<li>原型模式(Prototype 模式)是指：用原型实例指定创建对象的种类，并且通过拷贝这些原型，创建新的对象</li>
+<li>原型模式是一种创建型设计模式，允许一个对象再创建另外一个可定制的对象，无需知道如何创建的细节</li>
+<li>工作原理是:通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝它们自己来实施创建，即 对象.clone()<h3 id="原型模式原理结构图-uml-类图"><a href="#原型模式原理结构图-uml-类图" class="headerlink" title="原型模式原理结构图-uml 类图"></a>原型模式原理结构图-uml 类图</h3><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/1.png" alt="设计模式"></li>
+<li>Prototype : 原型类，声明一个克隆自己的接口</li>
+<li>ConcretePrototype: 具体的原型类, 实现一个克隆自己的操作</li>
+<li>Client: 让一个原型对象克隆自己，从而创建一个新的对象(属性一样）</li>
+</ol>
+<h3 id="原型模式代码实现"><a href="#原型模式代码实现" class="headerlink" title="原型模式代码实现"></a>原型模式代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">package com.atguigu.prototype.improve;</span><br><span class="line">    public class Sheep implements Cloneable &#123;</span><br><span class="line">        private String name;</span><br><span class="line">        private int age;</span><br><span class="line">        private String color;</span><br><span class="line">        private String address &#x3D; &quot;蒙古羊&quot;;</span><br><span class="line">        public Sheep friend; &#x2F;&#x2F;是对象, 克隆是会如何处理, 默认是浅拷贝</span><br><span class="line">        public Sheep(String name, int age, String color) &#123;</span><br><span class="line">            super();</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.age &#x3D; age;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">        &#125;</span><br><span class="line">        public String getName() &#123;</span><br><span class="line">            return name;</span><br><span class="line">        &#125;</span><br><span class="line">        public void setName(String name) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">        &#125;</span><br><span class="line">        public int getAge() &#123;</span><br><span class="line">            return age;</span><br><span class="line">        &#125;</span><br><span class="line">        public void setAge(int age) &#123;</span><br><span class="line">            this.age &#x3D; age;</span><br><span class="line">        &#125;</span><br><span class="line">        public String getColor() &#123;</span><br><span class="line">            return color;</span><br><span class="line">        &#125;</span><br><span class="line">        public void setColor(String color) &#123;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public String toString() &#123;</span><br><span class="line">            return &quot;Sheep [name&#x3D;&quot; + name + &quot;, age&#x3D;&quot; + age + &quot;, color&#x3D;&quot; + color + &quot;, address&#x3D;&quot; + address + &quot;]&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;克隆该实例，使用默认的 clone 方法来完成</span><br><span class="line">        @Override</span><br><span class="line">        protected Object clone() &#123;</span><br><span class="line">            Sheep sheep &#x3D; null;</span><br><span class="line">            try &#123;</span><br><span class="line">                sheep &#x3D; (Sheep)super.clone();</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                System.out.println(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">            return sheep;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">package com.atguigu.prototype.improve;</span><br><span class="line">    public class Client &#123;</span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">            System.out.println(&quot;原型模式完成对象的创建&quot;);</span><br><span class="line">            Sheep sheep &#x3D; new Sheep(&quot;tom&quot;, 1, &quot;白色&quot;);</span><br><span class="line">            sheep.friend &#x3D; new Sheep(&quot;jack&quot;, 2, &quot;黑色&quot;);</span><br><span class="line">            Sheep sheep2 &#x3D; (Sheep)sheep.clone(); &#x2F;&#x2F;克隆</span><br><span class="line">            Sheep sheep3 &#x3D; (Sheep)sheep.clone(); &#x2F;&#x2F;克隆</span><br><span class="line">            Sheep sheep4 &#x3D; (Sheep)sheep.clone(); &#x2F;&#x2F;克隆</span><br><span class="line">            Sheep sheep5 &#x3D; (Sheep)sheep.clone(); &#x2F;&#x2F;克隆</span><br><span class="line">            System.out.println(&quot;sheep2 &#x3D;&quot; + sheep2 + &quot;sheep2.friend&#x3D;&quot; + sheep2.friend.hashCode());</span><br><span class="line">            System.out.println(&quot;sheep3 &#x3D;&quot; + sheep3 + &quot;sheep3.friend&#x3D;&quot; + sheep3.friend.hashCode());</span><br><span class="line">            System.out.println(&quot;sheep4 &#x3D;&quot; + sheep4 + &quot;sheep4.friend&#x3D;&quot; + sheep4.friend.hashCode());</span><br><span class="line">            System.out.println(&quot;sheep5 &#x3D;&quot; + sheep5 + &quot;sheep5.friend&#x3D;&quot; + sheep5.friend.hashCode());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="深入讨论-浅拷贝和深拷贝"><a href="#深入讨论-浅拷贝和深拷贝" class="headerlink" title="深入讨论-浅拷贝和深拷贝"></a>深入讨论-浅拷贝和深拷贝</h3><ul>
+<li>浅拷贝的介绍</li>
+</ul>
+<ol>
+<li>对于数据类型是基本数据类型的成员变量，浅拷贝会直接进行值传递，也就是将该属性值复制一份给新的对象。</li>
+<li>对于数据类型是引用数据类型的成员变量，比如说成员变量是某个数组、某个类的对象等，那么浅拷贝会进行引用传递，也就是只是将该成员变量的引用值（内存地址）复制一份给新的对象。因为实际上两个对象的该成员变量都指向同一个实例。在这种情况下，在一个对象中修改该成员变量会影响到另一个对象的该成员变量值</li>
+<li>浅拷贝是使用默认的 clone()方法来实现</li>
+</ol>
+<ul>
+<li>深拷贝基本介绍</li>
+</ul>
+<ol>
+<li>复制对象的所有基本数据类型的成员变量值</li>
+<li>为所有引用数据类型的成员变量申请存储空间，并复制每个引用数据类型成员变量所引用的对象，直到该对象可达的所有对象。也就是说，对象进行深拷贝要对整个对象(包括对象的引用类型)进行拷贝</li>
+<li>深拷贝实现方式 1：重写 clone 方法来实现深拷贝</li>
+<li>深拷贝实现方式 2：通过对象序列化实现深拷贝(推荐)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line">public class DeepCloneableTarget implements Serializable, Cloneable &#123;</span><br><span class="line">    private static final long serialVersionUID &#x3D; 1L;</span><br><span class="line">    private String cloneName;</span><br><span class="line">    private String cloneClass;</span><br><span class="line">    &#x2F;&#x2F;构造器</span><br><span class="line">    public DeepCloneableTarget(String cloneName, String cloneClass) &#123;</span><br><span class="line">        this.cloneName &#x3D; cloneName;</span><br><span class="line">        this.cloneClass &#x3D; cloneClass;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;因为该类的属性，都是 String , 因此我们这里使用默认的 clone 完成即可</span><br><span class="line">    @Override</span><br><span class="line">    protected Object clone() throws CloneNotSupportedException &#123;</span><br><span class="line">        return super.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.atguigu.prototype.deepclone;</span><br><span class="line">import java.io.ByteArrayInputStream;</span><br><span class="line">import java.io.ByteArrayOutputStream;</span><br><span class="line">import java.io.ObjectInputStream;</span><br><span class="line">import java.io.ObjectOutputStream;</span><br><span class="line">import java.io.Serializable;</span><br><span class="line">public class DeepProtoType implements Serializable, Cloneable &#123;</span><br><span class="line">    public String name; &#x2F;&#x2F;String 属性</span><br><span class="line">    public DeepCloneableTarget deepCloneableTarget;&#x2F;&#x2F; 引用类型</span><br><span class="line">    public DeepProtoType() &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;深拷贝 - 方式 1 使用 clone 方法</span><br><span class="line">    @Override</span><br><span class="line">    protected Object clone() throws CloneNotSupportedException &#123;</span><br><span class="line">        Object deep &#x3D; null;</span><br><span class="line">    &#x2F;&#x2F;这里完成对基本数据类型(属性)和 String 的克隆</span><br><span class="line">        deep &#x3D; super.clone();</span><br><span class="line">    &#x2F;&#x2F;对引用类型的属性，进行单独处理</span><br><span class="line">        DeepProtoType deepProtoType &#x3D; (DeepProtoType) deep;</span><br><span class="line">        deepProtoType.deepCloneableTarget &#x3D; (DeepCloneableTarget) deepCloneableTarget.clone();</span><br><span class="line">        return deepProtoType;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;深拷贝 - 方式 2 通过对象的序列化实现 (推荐)</span><br><span class="line">    public Object deepClone() &#123;</span><br><span class="line">    &#x2F;&#x2F;创建流对象</span><br><span class="line">        ByteArrayOutputStream bos &#x3D; null;</span><br><span class="line">        ObjectOutputStream oos &#x3D; null;</span><br><span class="line">        ByteArrayInputStream bis &#x3D; null;</span><br><span class="line">        ObjectInputStream ois &#x3D; null;</span><br><span class="line">        try &#123;</span><br><span class="line">    &#x2F;&#x2F;序列化</span><br><span class="line">            bos &#x3D; new ByteArrayOutputStream();</span><br><span class="line">            oos &#x3D; new ObjectOutputStream(bos);</span><br><span class="line">            oos.writeObject(this); &#x2F;&#x2F;当前这个对象以对象流的方式输出</span><br><span class="line">    &#x2F;&#x2F;反序列化</span><br><span class="line">            bis &#x3D; new ByteArrayInputStream(bos.toByteArray());</span><br><span class="line">            ois &#x3D; new ObjectInputStream(bis);</span><br><span class="line">            DeepProtoType copyObj &#x3D; (DeepProtoType) ois.readObject();</span><br><span class="line">            return copyObj;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            return null;</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">    &#x2F;&#x2F;关闭流</span><br><span class="line">            try &#123;</span><br><span class="line">                bos.close();</span><br><span class="line">                oos.close();</span><br><span class="line">                bis.close();</span><br><span class="line">                ois.close();</span><br><span class="line">            &#125; catch (Exception e2) &#123;</span><br><span class="line">                System.out.println(e2.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;Client.java</span><br><span class="line">package com.atguigu.prototype.deepclone;</span><br><span class="line">public class Client &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        DeepProtoType p &#x3D; new DeepProtoType();</span><br><span class="line">        p.name &#x3D; &quot;宋江&quot;;</span><br><span class="line">        p.deepCloneableTarget &#x3D; new DeepCloneableTarget(&quot;大牛&quot;, &quot;小牛&quot;);</span><br><span class="line">        &#x2F;&#x2F;方式 1 完成深拷贝</span><br><span class="line">        &#x2F;&#x2F; DeepProtoType p2 &#x3D; (DeepProtoType) p.clone();</span><br><span class="line">        &#x2F;&#x2F;</span><br><span class="line">        &#x2F;&#x2F; System.out.println(&quot;p.name&#x3D;&quot; + p.name + &quot;p.deepCloneableTarget&#x3D;&quot; + p.deepCloneableTarget.hashCode());</span><br><span class="line">        &#x2F;&#x2F; System.out.println(&quot;p2.name&#x3D;&quot; + p.name + &quot;p2.deepCloneableTarget&#x3D;&quot; + p2.deepCloneableTarget.hashCode());</span><br><span class="line">        &#x2F;&#x2F;方式 2 完成深拷贝</span><br><span class="line">        DeepProtoType p2 &#x3D; (DeepProtoType) p.deepClone();</span><br><span class="line">        System.out.println(&quot;p.name&#x3D;&quot; + p.name + &quot;p.deepCloneableTarget&#x3D;&quot; + p.deepCloneableTarget.hashCode());</span><br><span class="line">        System.out.println(&quot;p2.name&#x3D;&quot; + p.name + &quot;p2.deepCloneableTarget&#x3D;&quot; + p2.deepCloneableTarget.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="原型模式的注意事项和细节"><a href="#原型模式的注意事项和细节" class="headerlink" title="原型模式的注意事项和细节"></a>原型模式的注意事项和细节</h3></li>
+<li>创建新的对象比较复杂时，可以利用原型模式简化对象的创建过程，同时也能够提高效率</li>
+<li>不用重新初始化对象，而是动态地获得对象运行时的状态</li>
+<li>如果原始对象发生变化(增加或者减少属性)，其它克隆对象的也会发生相应的变化，无需修改代码</li>
+<li>在实现深克隆的时候可能需要比较复杂的代码</li>
+<li>缺点：需要为每一个类配备一个克隆方法，这对全新的类来说不是很难，但对已有的类进行改造时，需要修改其源代码，违背了 ocp 原则，这点请注意.</li>
+</ol>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -194,16 +271,85 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
+
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          设计模式-单例模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式-命令模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -218,603 +364,34 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-桥接模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">设计模式-桥接模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#原型模式"><span class="toc-number">1.</span> <span class="toc-text">原型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原型模式-1"><span class="toc-number">1.1.</span> <span class="toc-text">原型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆羊问题"><span class="toc-number">1.1.1.</span> <span class="toc-text">克隆羊问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传统方式解决克隆羊问题"><span class="toc-number">1.1.2.</span> <span class="toc-text">传统方式解决克隆羊问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传统的方式的优缺点"><span class="toc-number">1.1.3.</span> <span class="toc-text">传统的方式的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.1.4.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型模式原理结构图-uml-类图"><span class="toc-number">1.1.5.</span> <span class="toc-text">原型模式原理结构图-uml 类图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型模式代码实现"><span class="toc-number">1.1.6.</span> <span class="toc-text">原型模式代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深入讨论-浅拷贝和深拷贝"><span class="toc-number">1.1.7.</span> <span class="toc-text">深入讨论-浅拷贝和深拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型模式的注意事项和细节"><span class="toc-number">1.1.8.</span> <span class="toc-text">原型模式的注意事项和细节</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-设计模式-建造者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式-建造者模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-状态模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">设计模式-状态模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-模板方法模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">设计模式-模板方法模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-策略模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">设计模式-策略模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-组合模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">设计模式-组合模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-装饰者设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式-装饰者设计模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="装饰者设计模式"><a href="#装饰者设计模式" class="headerlink" title="装饰者设计模式"></a>装饰者设计模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-观察者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式-观察者模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-解释器模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">设计模式-解释器模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
   
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -840,8 +417,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

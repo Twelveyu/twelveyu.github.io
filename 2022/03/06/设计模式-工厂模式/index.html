@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://twelveyu.github.io">
-  <title>杨翔宇的博客</title>
+  <title>设计模式-工厂模式 | 杨翔宇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杨翔宇的博客">
-<meta property="og:url" content="https://twelveyu.github.io/page/2/index.html">
+  <meta name="description" content="工厂模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-工厂模式">
+<meta property="og:url" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="杨翔宇的博客">
+<meta property="og:description" content="工厂模式">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/10.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/11.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/12.png">
+<meta property="og:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/13.png">
+<meta property="article:published_time" content="2022-03-06T11:04:37.000Z">
+<meta property="article:modified_time" content="2022-03-24T13:42:11.670Z">
 <meta property="article:author" content="杨翔宇">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://twelveyu.github.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/10.png">
   
     <link rel="alternative" href="/atom.xml" title="杨翔宇的博客" type="application/atom+xml">
   
@@ -159,20 +168,19 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-设计模式-外观模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-设计模式-工厂模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">设计模式-外观模式</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式-工厂模式
     </h1>
   
 
         
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
   	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
 </a>
         
@@ -180,12 +188,114 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
+        <h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><a id="more"></a>
+
+<h2 id="工厂模式-1"><a href="#工厂模式-1" class="headerlink" title="工厂模式"></a>工厂模式</h2><h3 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h3><h4 id="具体需求"><a href="#具体需求" class="headerlink" title="具体需求"></a>具体需求</h4><p>看一个披萨的项目：要便于披萨种类的扩展，要便于维护</p>
+<ol>
+<li>披萨的种类很多(比如 GreekPizz、CheesePizz 等)</li>
+<li>披萨的制作有 prepare，bake, cut, box</li>
+<li>完成披萨店订购功能<h4 id="使用传统的方式来完成"><a href="#使用传统的方式来完成" class="headerlink" title="使用传统的方式来完成"></a>使用传统的方式来完成</h4>思路分析(类图)</li>
+</ol>
+<p><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/10.png" alt="设计模式"></p>
+<h4 id="传统的方式的优缺点"><a href="#传统的方式的优缺点" class="headerlink" title="传统的方式的优缺点"></a>传统的方式的优缺点</h4><ol>
+<li>优点是比较好理解，简单易操作。</li>
+<li>缺点是违反了设计模式的 ocp 原则，即对扩展开放，对修改关闭。即当我们给类增加新功能的时候，尽量不修改代码，或者尽可能少修改代码.</li>
+<li>比如我们这时要新增加一个 Pizza 的种类(Pepper 披萨)，我们要增加一个 Pizza 类，而且只要是订购 Pizza 的代码都需要修改.</li>
+<li>改进的思路分析</li>
+</ol>
+<ul>
+<li>分析：修改代码可以接受，但是如果我们在其它的地方也有创建 Pizza 的代码，就意味着，也需要修改，而创建 Pizza的代码，往往有多处。</li>
+<li>思路：把创建 Pizza 对象封装到一个类中，这样我们有新的 Pizza 种类时，只需要修改该类就可，其它有创建到 Pizza对象的代码就不需要修改了.-&gt; 简单工厂模式<h4 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h4></li>
+</ul>
+<ol>
+<li>简单工厂模式是属于创建型模式，是工厂模式的一种。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。简单工厂模式是工厂模式家族中最简单实用的模式</li>
+<li>简单工厂模式：定义了一个创建对象的类，由这个类来封装实例化对象的行为(代码)</li>
+<li>在软件开发中，当我们会用到大量的创建某种、某类或者某批对象时，就会使用到工厂模式<h4 id="使用简单工厂模式"><a href="#使用简单工厂模式" class="headerlink" title="使用简单工厂模式"></a>使用简单工厂模式</h4><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/11.png" alt="设计模式"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">package com.atguigu.factory.simplefactory.pizzastore.order;</span><br><span class="line">import com.atguigu.factory.simplefactory.pizzastore.pizza.CheesePizza;</span><br><span class="line">import com.atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;</span><br><span class="line">import com.atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;</span><br><span class="line">import com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;</span><br><span class="line">&#x2F;&#x2F;简单工厂类</span><br><span class="line">public class SimpleFactory &#123;</span><br><span class="line">    &#x2F;&#x2F;更加 orderType 返回对应的 Pizza 对象</span><br><span class="line">    public Pizza createPizza(String orderType) &#123;</span><br><span class="line">        Pizza pizza &#x3D; null;</span><br><span class="line">        System.out.println(&quot;使用简单工厂模式&quot;);</span><br><span class="line">        if (orderType.equals(&quot;greek&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new GreekPizza();</span><br><span class="line">            pizza.setName(&quot; 希腊披萨 &quot;);</span><br><span class="line">        &#125; else if (orderType.equals(&quot;cheese&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new CheesePizza();</span><br><span class="line">            pizza.setName(&quot; 奶酪披萨 &quot;);</span><br><span class="line">        &#125; else if (orderType.equals(&quot;pepper&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new PepperPizza();</span><br><span class="line">            pizza.setName(&quot;胡椒披萨&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return pizza;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;简单工厂模式 也叫 静态工厂模式</span><br><span class="line">    public static Pizza createPizza2(String orderType) &#123;</span><br><span class="line">        Pizza pizza &#x3D; null;</span><br><span class="line">        System.out.println(&quot;使用简单工厂模式 2&quot;);</span><br><span class="line">        if (orderType.equals(&quot;greek&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new GreekPizza();</span><br><span class="line">            pizza.setName(&quot; 希腊披萨 &quot;);</span><br><span class="line">        &#125; else if (orderType.equals(&quot;cheese&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new CheesePizza();</span><br><span class="line">            pizza.setName(&quot; 奶酪披萨 &quot;);</span><br><span class="line">        &#125; else if (orderType.equals(&quot;pepper&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new PepperPizza();</span><br><span class="line">            pizza.setName(&quot;胡椒披萨&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;OrderPizza.java</span><br><span class="line">package com.atguigu.factory.simplefactory.pizzastore.order;</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;</span><br><span class="line">public class OrderPizza &#123;</span><br><span class="line">    &#x2F;&#x2F;定义一个简单工厂对象</span><br><span class="line">    SimpleFactory simpleFactory;</span><br><span class="line">    Pizza pizza &#x3D; null;</span><br><span class="line">    &#x2F;&#x2F;构造器</span><br><span class="line">    public OrderPizza(SimpleFactory simpleFactory) &#123;</span><br><span class="line">        setFactory(simpleFactory);</span><br><span class="line">    &#125;</span><br><span class="line">    public void setFactory(SimpleFactory simpleFactory) &#123;</span><br><span class="line">        String orderType &#x3D; &quot;&quot;; &#x2F;&#x2F;用户输入的</span><br><span class="line">        this.simpleFactory &#x3D; simpleFactory; &#x2F;&#x2F;设置简单工厂对象</span><br><span class="line">        do &#123;</span><br><span class="line">            orderType &#x3D; getType();</span><br><span class="line">            pizza &#x3D; this.simpleFactory.createPizza(orderType);</span><br><span class="line">            &#x2F;&#x2F;输出 pizza</span><br><span class="line">            if (pizza !&#x3D; null) &#123; &#x2F;&#x2F;订购成功</span><br><span class="line">                pizza.prepare();</span><br><span class="line">                pizza.bake();</span><br><span class="line">                pizza.cut();</span><br><span class="line">                pizza.box();</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                System.out.println(&quot; 订购披萨失败 &quot;);</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; while (true);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 写一个方法，可以获取客户希望订购的披萨种类</span><br><span class="line">    private String getType() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            BufferedReader strin &#x3D; new BufferedReader(new InputStreamReader(System.in));</span><br><span class="line">            System.out.println(&quot;input pizza 种类:&quot;);</span><br><span class="line">            String str &#x3D; strin.readLine();</span><br><span class="line">            return str;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            return &quot;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4></li>
+</ol>
+<ul>
+<li>优点：<br> 工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端可以免除直接创建产品对象的职责，很方便的创建出相应的产品。工厂和产品的职责区分明确。<br> 客户端无需知道所创建具体产品的类名，只需知道参数即可。<br> 也可以引入配置文件，在不修改客户端代码的情况下更换和添加新的具体产品类。</li>
+<li>缺点：<br> 简单工厂模式的工厂类单一，负责所有产品的创建，职责过重，一旦异常，整个系统将受影响。且工厂类代码会非常臃肿，违背高聚合原则。<br> 使用简单工厂模式会增加系统中类的个数（引入新的工厂类），增加系统的复杂度和理解难度<br> 系统扩展困难，一旦增加新产品不得不修改工厂逻辑，在产品类型较多时，可能造成逻辑过于复杂<br> 简单工厂模式使用了 static 工厂方法，造成工厂角色无法形成基于继承的等级结构。</li>
+<li>应用场景<br>对于产品种类相对较少的情况，考虑使用简单工厂模式。使用简单工厂模式的客户端只需要传入工厂类的参数，不需要关心如何创建对象的逻辑，可以很方便地创建所需产品。</li>
+</ul>
+<h3 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h3><h4 id="看一个新的需求"><a href="#看一个新的需求" class="headerlink" title="看一个新的需求"></a>看一个新的需求</h4><p>披萨项目新的需求：客户在点披萨时，可以点不同口味的披萨，比如 北京的奶酪 pizza、北京的胡椒 pizza 或者是伦敦的奶酪 pizza、伦敦的胡椒 pizza。</p>
+<ul>
+<li>思路 1 使用简单工厂模式，创建不同的简单工厂类，比如 BJPizzaSimpleFactory、LDPizzaSimpleFactory 等等.从当前这个案例来说，也是可以的，但是考虑到项目的规模，以及软件的可维护性、可扩展性并不是特别好</li>
+<li>思路 2 使用工厂方法模式<h4 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h4>简单工厂模式违背了开闭原则，而“工厂方法模式”是对简单工厂模式的进一步抽象化，其好处是可以使系统在不修改原来代码的情况下引进新的产品，即满足开闭原则。</li>
+</ul>
+<ol>
+<li>工厂方法模式设计方案：将披萨项目的实例化功能抽象成抽象方法，在不同的口味点餐子类中具体实现。</li>
+<li>工厂方法模式：定义了一个创建对象的抽象方法，由子类决定要实例化的类。工厂方法模式将对象的实例化推迟到子类<br><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/12.png" alt="设计模式"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;OrderPizza.java 类</span><br><span class="line">package com.atguigu.factory.factorymethod.pizzastore.order;</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;</span><br><span class="line">public abstract class OrderPizza &#123;</span><br><span class="line">    &#x2F;&#x2F;定义一个抽象方法，createPizza , 让各个工厂子类自己实现</span><br><span class="line">    abstract Pizza createPizza(String orderType);</span><br><span class="line">    &#x2F;&#x2F; 构造器</span><br><span class="line">    public OrderPizza() &#123;</span><br><span class="line">        Pizza pizza &#x3D; null;</span><br><span class="line">        String orderType; &#x2F;&#x2F; 订购披萨的类型</span><br><span class="line">        do &#123;</span><br><span class="line">            orderType &#x3D; getType();</span><br><span class="line">            pizza &#x3D; createPizza(orderType); &#x2F;&#x2F;抽象方法，由工厂子类完成</span><br><span class="line">            &#x2F;&#x2F;输出 pizza 制作过程</span><br><span class="line">            pizza.prepare();</span><br><span class="line">            pizza.bake();</span><br><span class="line">            pizza.cut();</span><br><span class="line">            pizza.box();</span><br><span class="line">        &#125; while (true);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 写一个方法，可以获取客户希望订购的披萨种类</span><br><span class="line">    private String getType() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            BufferedReader strin &#x3D; new BufferedReader(new InputStreamReader(System.in));</span><br><span class="line">            System.out.println(&quot;input pizza 种类:&quot;);</span><br><span class="line">            String str &#x3D; strin.readLine();</span><br><span class="line">            return str;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            return &quot;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.atguigu.factory.factorymethod.pizzastore.order;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;</span><br><span class="line">public class BJOrderPizza extends OrderPizza &#123;</span><br><span class="line">    @Override</span><br><span class="line">    Pizza createPizza(String orderType) &#123;</span><br><span class="line">        Pizza pizza &#x3D; null;</span><br><span class="line">        if (orderType.equals(&quot;cheese&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new BJCheesePizza();</span><br><span class="line">        &#125; else if (orderType.equals(&quot;pepper&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new BJPepperPizza();</span><br><span class="line">        &#125;</span><br><span class="line">        return pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.atguigu.factory.factorymethod.pizzastore.order;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.LDCheesePizza;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.LDPepperPizza;</span><br><span class="line">import com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;</span><br><span class="line">public class LDOrderPizza extends OrderPizza &#123;</span><br><span class="line">    @Override</span><br><span class="line">    Pizza createPizza(String orderType) &#123;</span><br><span class="line">        Pizza pizza &#x3D; null;</span><br><span class="line">        if (orderType.equals(&quot;cheese&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new LDCheesePizza();</span><br><span class="line">        &#125; else if (orderType.equals(&quot;pepper&quot;)) &#123;</span><br><span class="line">            pizza &#x3D; new LDPepperPizza();</span><br><span class="line">        &#125;</span><br><span class="line">        return pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h4></li>
+</ol>
+<ul>
+<li>优点：<br> 用户只需要知道具体工厂的名称就可得到所要的产品，无须知道产品的具体创建过程。<br> 灵活性增强，对于新产品的创建，只需多写一个相应的工厂类。<br> 典型的解耦框架。高层模块只需要知道产品的抽象类，无须关心其他实现类，满足迪米特法则、依赖倒置原则和里氏替换原则。</li>
+<li>缺点：<br> 类的个数容易过多，增加复杂度<br> 增加了系统的抽象性和理解难度<br> 抽象产品只能生产一种产品，此弊端可使用抽象工厂模式解决。</li>
+<li>应用场景：<br> 客户只知道创建产品的工厂名，而不知道具体的产品名。如 TCL 电视工厂、海信电视工厂等。<br> 创建对象的任务由多个具体子工厂中的某一个完成，而抽象工厂只提供创建产品的接口。<br> 客户不关心创建产品的细节，只关心产品的品牌</li>
+</ul>
+<h3 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h3><h4 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h4><ol>
+<li>抽象工厂模式：定义了一个 interface 用于创建相关或有依赖关系的对象簇，而无需指明具体的类</li>
+<li>抽象工厂模式可以将简单工厂模式和工厂方法模式进行整合。</li>
+<li>从设计层面看，抽象工厂模式就是对简单工厂模式的改进(或者称为进一步的抽象)。</li>
+<li>将工厂抽象成两层，AbsFactory(抽象工厂) 和 具体实现的工厂子类。程序员可以根据创建对象类型使用对应的工厂子类。这样将单个的简单工厂类变成了工厂簇，更利于代码的维护和扩展。</li>
+<li>类图：</li>
+</ol>
+<p><img src="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/13.png" alt="设计模式"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">package com.atguigu.factory.absfactory.pizzastore.order;</span><br><span class="line">import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;</span><br><span class="line">&#x2F;&#x2F;一个抽象工厂模式的抽象层(接口)</span><br><span class="line">public interface AbsFactory &#123;</span><br><span class="line">    &#x2F;&#x2F;让下面的工厂子类来 具体实现</span><br><span class="line">    public Pizza createPizza(String orderType);</span><br><span class="line">        package com.atguigu.factory.absfactory.pizzastore.order;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.BJCheesePizza;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.BJPepperPizza;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;</span><br><span class="line">    &#x2F;&#x2F;这是工厂子类</span><br><span class="line">    public class BJFactory implements AbsFactory &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public Pizza createPizza(String orderType) &#123;</span><br><span class="line">            System.out.println(&quot;~使用的是抽象工厂模式~&quot;);</span><br><span class="line">            Pizza pizza &#x3D; null;</span><br><span class="line">            if (orderType.equals(&quot;cheese&quot;)) &#123;</span><br><span class="line">                pizza &#x3D; new BJCheesePizza();</span><br><span class="line">            &#125; else if (orderType.equals(&quot;pepper&quot;)) &#123;</span><br><span class="line">                pizza &#x3D; new BJPepperPizza();</span><br><span class="line">            &#125;</span><br><span class="line">            return pizza;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">package com.atguigu.factory.absfactory.pizzastore.order;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.LDCheesePizza;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.LDPepperPizza;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;</span><br><span class="line">    public class LDFactory implements AbsFactory &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public Pizza createPizza(String orderType) &#123;</span><br><span class="line">            System.out.println(&quot;~使用的是抽象工厂模式~&quot;);</span><br><span class="line">            Pizza pizza &#x3D; null;</span><br><span class="line">            if (orderType.equals(&quot;cheese&quot;)) &#123;</span><br><span class="line">                pizza &#x3D; new LDCheesePizza();</span><br><span class="line">            &#125; else if (orderType.equals(&quot;pepper&quot;)) &#123;</span><br><span class="line">                pizza &#x3D; new LDPepperPizza();</span><br><span class="line">            &#125;</span><br><span class="line">            return pizza;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#x2F;&#x2F;OrderPizza.java</span><br><span class="line">package com.atguigu.factory.absfactory.pizzastore.order;</span><br><span class="line">        import java.io.BufferedReader;</span><br><span class="line">        import java.io.IOException;</span><br><span class="line">        import java.io.InputStreamReader;</span><br><span class="line">        import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;</span><br><span class="line">    public class OrderPizza &#123;</span><br><span class="line">        AbsFactory factory;</span><br><span class="line">        &#x2F;&#x2F; 构造器</span><br><span class="line">        public OrderPizza(AbsFactory factory) &#123;</span><br><span class="line">            setFactory(factory);</span><br><span class="line">        &#125;</span><br><span class="line">        private void setFactory(AbsFactory factory) &#123;</span><br><span class="line">            Pizza pizza &#x3D; null;</span><br><span class="line">            String orderType &#x3D; &quot;&quot;; &#x2F;&#x2F; 用户输入</span><br><span class="line">            this.factory &#x3D; factory;</span><br><span class="line">            do &#123;</span><br><span class="line">                orderType &#x3D; getType();</span><br><span class="line">&#x2F;&#x2F; factory 可能是北京的工厂子类，也可能是伦敦的工厂子类</span><br><span class="line">                pizza &#x3D; factory.createPizza(orderType);</span><br><span class="line">                if (pizza !&#x3D; null) &#123; &#x2F;&#x2F; 订购 ok</span><br><span class="line">                    pizza.prepare();</span><br><span class="line">                    pizza.bake();</span><br><span class="line">                    pizza.cut();</span><br><span class="line">                    pizza.box();</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    System.out.println(&quot;订购失败&quot;);</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; while (true);</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 写一个方法，可以获取客户希望订购的披萨种类</span><br><span class="line">        private String getType() &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                BufferedReader strin &#x3D; new BufferedReader(new InputStreamReader(System.in));</span><br><span class="line">                System.out.println(&quot;input pizza 种类:&quot;);</span><br><span class="line">                String str &#x3D; strin.readLine();</span><br><span class="line">                return str;</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                return &quot;&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+<li>抽象工厂（AbstractFactory）模式的定义：是一种为访问类提供一个创建一组相关或相互依赖对象的接口，且访问类无须指定所要产品的具体类就能得到同族的不同等级的产品的模式结构。</li>
+<li>抽象工厂模式是工厂方法模式的升级版本，工厂方法模式只生产一个等级的产品，而抽象工厂模式可生产多个等级的产品。</li>
+<li>使用抽象工厂模式一般要满足以下条件。<br>  系统中有多个产品族，每个具体工厂创建同一族但属于不同等级结构的产品。<br>  系统一次只可能消费其中某一族产品，即同族的产品一起使用。</li>
+<li>抽象工厂模式除了具有工厂方法模式的优点外，其他主要优点如下。<br>  可以在类的内部对产品族中相关联的多等级产品共同管理，而不必专门引入多个新的类来进行管理。<br>  当需要产品族时，抽象工厂可以保证客户端始终只使用同一个产品的产品组。<br>  抽象工厂增强了程序的可扩展性，当增加一个新的产品族时，不需要修改原代码，满足开闭原则。</li>
+<li>其缺点是：当产品族中需要增加一个新的产品时，所有的工厂类都需要进行修改。增加了系统的抽象性和理解难度。</li>
+</ul>
+<h4 id="工厂模式在-JDK-Calendar-应用的源码分析"><a href="#工厂模式在-JDK-Calendar-应用的源码分析" class="headerlink" title="工厂模式在 JDK-Calendar 应用的源码分析"></a>工厂模式在 JDK-Calendar 应用的源码分析</h4><p>JDK 中的 Calendar 类中，就使用了简单工厂模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Calendar;</span><br><span class="line">public class Factory &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F; getInstance 是 Calendar 静态方法</span><br><span class="line">        Calendar cal &#x3D; Calendar.getInstance();</span><br><span class="line">        &#x2F;&#x2F; 注意月份下标从 0 开始，所以取月份要+1</span><br><span class="line">        System.out.println(&quot;年:&quot; + cal.get(Calendar.YEAR));</span><br><span class="line">        System.out.println(&quot;月:&quot; + (cal.get(Calendar.MONTH) + 1));</span><br><span class="line">        System.out.println(&quot;日:&quot; + cal.get(Calendar.DAY_OF_MONTH));</span><br><span class="line">        System.out.println(&quot;时:&quot; + cal.get(Calendar.HOUR_OF_DAY));</span><br><span class="line">        System.out.println(&quot;分:&quot; + cal.get(Calendar.MINUTE));</span><br><span class="line">        System.out.println(&quot;秒:&quot; + cal.get(Calendar.SECOND));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    &#x2F;&#x2F;Calendar.java</span><br><span class="line">    public static Calendar getInstance() &#123;</span><br><span class="line">        return createCalendar(TimeZone.getDefault(), Locale.getDefault(Locale.Category.FORMAT));</span><br><span class="line">    &#125;</span><br><span class="line">    private static Calendar createCalendar(TimeZone zone,</span><br><span class="line">                                           Locale aLocale) &#x2F;&#x2F;根据 TimeZone zone, locale 创建对应的实例</span><br><span class="line">    &#123;</span><br><span class="line">        CalendarProvider provider &#x3D;</span><br><span class="line">                LocaleProviderAdapter.getAdapter(CalendarProvider.class, aLocale)</span><br><span class="line">                        .getCalendarProvider();</span><br><span class="line">        if (provider !&#x3D; null) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                return provider.getInstance(zone, aLocale);</span><br><span class="line">            &#125; catch (IllegalArgumentException iae) &#123;</span><br><span class="line">            &#x2F;&#x2F; fall back to the default instantiation</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Calendar cal &#x3D; null;</span><br><span class="line">        if (aLocale.hasExtensions()) &#123;</span><br><span class="line">            String caltype &#x3D; aLocale.getUnicodeLocaleType(&quot;ca&quot;);</span><br><span class="line">            if (caltype !&#x3D; null) &#123;</span><br><span class="line">                switch (caltype) &#123;</span><br><span class="line">                    case &quot;buddhist&quot;:</span><br><span class="line">                        cal &#x3D; new BuddhistCalendar(zone, aLocale);</span><br><span class="line">                        break;</span><br><span class="line">                    case &quot;japanese&quot;:</span><br><span class="line">                        cal &#x3D; new JapaneseImperialCalendar(zone, aLocale);</span><br><span class="line">                        break;</span><br><span class="line">                    case &quot;gregory&quot;:</span><br><span class="line">                        cal &#x3D; new GregorianCalendar(zone, aLocale);</span><br><span class="line">                        break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (cal &#x3D;&#x3D; null) &#123;</span><br><span class="line">            &#x2F;&#x2F; If no known calendar type is explicitly specified,</span><br><span class="line">            &#x2F;&#x2F; perform the traditional way to create a Calendar:</span><br><span class="line">            &#x2F;&#x2F; create a BuddhistCalendar for th_TH locale,</span><br><span class="line">            &#x2F;&#x2F; a JapaneseImperialCalendar for ja_JP_JP locale, or</span><br><span class="line">            &#x2F;&#x2F; a GregorianCalendar for any other locales.</span><br><span class="line">            &#x2F;&#x2F; NOTE: The language, country and variant strings are interned.</span><br><span class="line">            if (aLocale.getLanguage() &#x3D;&#x3D; &quot;th&quot; &amp;&amp; aLocale.getCountry() &#x3D;&#x3D; &quot;TH&quot;) &#123;</span><br><span class="line">                cal &#x3D; new BuddhistCalendar(zone, aLocale);</span><br><span class="line">            &#125; else if (aLocale.getVariant() &#x3D;&#x3D; &quot;JP&quot; &amp;&amp; aLocale.getLanguage() &#x3D;&#x3D; &quot;ja&quot;</span><br><span class="line">                    &amp;&amp; aLocale.getCountry() &#x3D;&#x3D; &quot;JP&quot;) &#123;</span><br><span class="line">                cal &#x3D; new JapaneseImperialCalendar(zone, aLocale);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                cal &#x3D; new GregorianCalendar(zone, aLocale);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return cal;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="工厂模式小结"><a href="#工厂模式小结" class="headerlink" title="工厂模式小结"></a>工厂模式小结</h4><ol>
+<li>工厂模式的意义<br>将实例化对象的代码提取出来，放到一个类中统一管理和维护，达到和主项目的依赖关系的解耦。从而提高项目的扩展和维护性。</li>
+<li>三种工厂模式 (简单工厂模式、工厂方法模式、抽象工厂模式)</li>
+<li>设计模式的依赖抽象原则</li>
+</ol>
+<ul>
+<li>创建对象实例时，不要直接 new 类, 而是把这个 new 类的动作放在一个工厂的方法中，并返回。有的书上说，变量不要直接持有具体类的引用。</li>
+<li>不要让类继承具体类，而是继承抽象类或者是实现 interface(接口)</li>
+<li>不要覆盖基类中已经实现的方法。</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -194,16 +304,85 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
+
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://https://twelveyu.github.io/hub.io/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          设计模式-备忘录模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式-外观模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -218,603 +397,34 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-桥接模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">设计模式-桥接模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#工厂模式"><span class="toc-number">1.</span> <span class="toc-text">工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工厂模式-1"><span class="toc-number">1.1.</span> <span class="toc-text">工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单工厂模式"><span class="toc-number">1.1.1.</span> <span class="toc-text">简单工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#具体需求"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">具体需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用传统的方式来完成"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">使用传统的方式来完成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#传统的方式的优缺点"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">传统的方式的优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用简单工厂模式"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">使用简单工厂模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优缺点"><span class="toc-number">1.1.1.6.</span> <span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂方法模式"><span class="toc-number">1.1.2.</span> <span class="toc-text">工厂方法模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#看一个新的需求"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">看一个新的需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本介绍-1"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优缺点-1"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象工厂模式"><span class="toc-number">1.1.3.</span> <span class="toc-text">抽象工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本介绍-2"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优缺点-2"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂模式在-JDK-Calendar-应用的源码分析"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">工厂模式在 JDK-Calendar 应用的源码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂模式小结"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">工厂模式小结</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-设计模式-建造者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式-建造者模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-状态模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">设计模式-状态模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-模板方法模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">设计模式-模板方法模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-策略模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">设计模式-策略模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-组合模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">设计模式-组合模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-装饰者设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式-装饰者设计模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="装饰者设计模式"><a href="#装饰者设计模式" class="headerlink" title="装饰者设计模式"></a>装饰者设计模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-观察者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式-观察者模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-解释器模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">设计模式-解释器模式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-03-06T11:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h1>
-        
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
   
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -840,8 +450,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
